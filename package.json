@@ -1,0 +1,29 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cohort-4-Team-Ana-1/Backend.git"
+  },
+  "keywords": [],
+  "author": "AdrianGutiR <adriangutir@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Cohort-4-Team-Ana-1/Backend/issues"
+  },
+  "homepage": "https://github.com/Cohort-4-Team-Ana-1/Backend#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.10.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
