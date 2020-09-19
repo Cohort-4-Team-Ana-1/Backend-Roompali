@@ -1,7 +1,7 @@
 {
-  "name": "backend",
+  "name": "Searching for Roomie",
   "version": "1.0.0",
-  "description": "",
+  "description": "Searching For Roomie API",
   "main": "src/index.js",
   "scripts": {
     "start": "node src/index.js",
@@ -11,8 +11,12 @@
     "type": "git",
     "url": "git+https://github.com/Cohort-4-Team-Ana-1/Backend.git"
   },
-  "keywords": [],
-  "author": "AdrianGutiR <adriangutir@gmail.com>",
+  "keywords": [ "Node", "Mongoose", "Express", "MongoDB", "Passport" ],
+  "contributors": [
+    "Adrian Gutierrez <adriangutir@gmail.com>",
+    "Ricardo Aragón <demianz09@hotmail.com>",
+    "Francisco Suarez <ulzahk@gmail.com>"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Cohort-4-Team-Ana-1/Backend/issues"
