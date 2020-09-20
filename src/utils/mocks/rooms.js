@@ -16,7 +16,7 @@ const roomsMock = [
     main_image:
       'https://roomi.imgix.net/wqgm2idQuk70S-i5TL9Rg/imageW4MzpFtQB.png',
     city: 'bogota',
-    address: 'Cra. 43 #65-9, Medellín, Antioquia',
+    address: 'Cra. 43 #65-9, Bogota, Bogota DC',
     room_whatsapp: '+5742925645',
     room_email: 'lorenaroom@gmail.com',
     square_meters: 30,
@@ -27,13 +27,43 @@ const roomsMock = [
   }
 ]
 
+
+
 const readRooms = async () => {
   return Promise.resolve(roomsMock)
 }
 
+const readOneRoom = async () => {
+  return Promise.resolve(roomsMock)
+}
+
+const createRoom = async () => {
+  return Promise.resolve(roomsMock[0])
+}
+
+const updateRoom = async () => {
+  return Promise.resolve(roomsMock[0])
+}
+
+const deleteRoom = async () =>{
+  return Promise.resolve(roomsMock[0])
+}
+
+const searchRoomByCity = async () => {
+  return Promise.resolve(roomsMock[0])
+}
+
+const roomIdTest = '5f66a7a19c9e142978eeb6b7'
+
 module.exports = {
   roomsMock,
+  roomIdTest,
   RoomsControllerMock: {
-    readRooms
+    readRooms,
+    readOneRoom,
+    createRoom,
+    updateRoom,
+    deleteRoom,
+    searchRoomByCity
   }
 }
