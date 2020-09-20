@@ -1,29 +1,41 @@
 {
-  "name": "backend",
+  "name": "searching-for-roomie",
   "version": "1.0.0",
-  "description": "",
+  "description": "Searching For Roomie API",
   "main": "src/index.js",
   "scripts": {
     "start": "node src/index.js",
-    "dev": "nodemon src/index.js"
+    "dev": "nodemon src/index.js",
+    "lint": "standard"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Cohort-4-Team-Ana-1/Backend.git"
   },
-  "keywords": [],
-  "author": "AdrianGutiR <adriangutir@gmail.com>",
+  "keywords": [
+    "Node",
+    "Mongoose",
+    "Express",
+    "MongoDB",
+    "Passport"
+  ],
+  "contributors": [
+    "Adrian Gutierrez <adriangutir@gmail.com>",
+    "Ricardo Aragón <demianz09@hotmail.com>",
+    "Francisco Suarez <ulzahk@gmail.com>"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Cohort-4-Team-Ana-1/Backend/issues"
   },
   "homepage": "https://github.com/Cohort-4-Team-Ana-1/Backend#readme",
   "dependencies": {
-    "dotenv": "^8.2.0",
-    "express": "^4.17.1",
-    "mongoose": "^5.10.5"
+    "dotenv": "8.2.0",
+    "express": "4.17.1",
+    "mongoose": "5.10.5"
   },
   "devDependencies": {
-    "nodemon": "^2.0.4"
+    "nodemon": "2.0.4",
+    "standard": "14.3.4"
   }
 }
