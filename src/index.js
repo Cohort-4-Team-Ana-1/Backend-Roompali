@@ -1,5 +1,6 @@
 const express = require('express')
 const database = require('./database')
+const { config } = require('./config')
 const usersApi = require('./components/users/routes')
 const roomsApi = require('./components/rooms/routes')
 const app = express()
@@ -15,10 +16,13 @@ usersApi(app)
 roomsApi(app)
 
 app.get('/', (req, res) => {
-  res.send('We are working!')
+  res.send(`
+  Server Online
+  
+  For more information visit: https://github.com/Cohort-4-Team-Ana-1/Backend-Roompali`)
 })
 
 // Server
-app.listen(3500, () => {
-  console.log('server listening at http://localhost:3500')
+app.listen(config.port, () => {
+  console.log(`Server listening at http://localhost:${config.port}`)
 })
