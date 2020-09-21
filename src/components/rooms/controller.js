@@ -3,24 +3,24 @@ const Rooms = require('./schema')
 /**
  * Brings all room records with all its attributes.
  */
-const readRooms = () => {
-  const rooms = Rooms.find({})
+const readRooms = async () => {
+  const rooms = await Rooms.find({})
   return rooms
 }
 
 /**
  * Brings one room record with all its attributes using its _id atribute as guide.
  */
-const readOneRoom = roomId => {
-  const room = Rooms.findById(roomId)
+const readOneRoom = async roomId => {
+  const room = await Rooms.findById(roomId)
   return room
 }
 
 /**
  * Creates a room record with all its attributes.
  */
-const createRoom = room => {
-  const newRoom = new Rooms({
+const createRoom = async room => {
+  const roomData = {
     room_name: room.room_name,
     main_image: room.main_image,
     secondary_image: room.secondary_image,
@@ -38,8 +38,8 @@ const createRoom = room => {
     closet: room.closet,
     room_description: room.room_description,
     deleted: room.deleted
-  })
-  newRoom.save()
+  }
+  const newRoom = await Rooms.create(roomData)
   return newRoom
 }
 
@@ -94,9 +94,9 @@ const deleteRoom = async roomId => {
 /**
  * Brings all room record with the matching city attribute.
  */
-const searchRoomByCity = city => {
+const searchRoomByCity = async city => {
   const cityProccesed = city.toLowerCase()
-  const rooms = Rooms.find({ city: cityProccesed })
+  const rooms = await Rooms.find({ city: cityProccesed })
   return rooms
 }
 
