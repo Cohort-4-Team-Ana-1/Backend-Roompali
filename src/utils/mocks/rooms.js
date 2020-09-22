@@ -57,8 +57,8 @@ const roomMockAttributes = {
   room_name: 'El departamento de Lorena',
   main_image: 'https://roomi.imgix.net/wqgm2idQuk70S-i5TL9Rg/imageW4MzpFtQB.png',
   secondary_image: [
-      'https://roomi.imgix.net/wqgm2idQuk70S-i5TL9Rg/imageIDySde8DWN.png',
-      'https://roomi.imgix.net/wqgm2idQuk70S-i5TL9Rg/imagez0by78FFx.png'
+    'https://roomi.imgix.net/wqgm2idQuk70S-i5TL9Rg/imageIDySde8DWN.png',
+    'https://roomi.imgix.net/wqgm2idQuk70S-i5TL9Rg/imagez0by78FFx.png'
   ],
   city: 'medellin',
   address: 'Cra. 43 #65-9, Medellín, Antioquia',
@@ -66,20 +66,18 @@ const roomMockAttributes = {
   room_email: 'lorenaroom@gmail.com',
   square_meters: 30,
   furniture: [
-      'cama',
-      'mesa'
+    'cama',
+    'mesa'
   ],
   price: 50,
   available: true,
-  wifi: true ,
+  wifi: true,
   private_bathroom: false,
   cleaning: false,
   closet: true,
   room_description: 'Alquilo habitación sin amoblar, con baño compartido, la habitación cuenta con armario (opción escritorio), buena iluminación y ventilación',
   deleted: false
 }
-
-
 
 const readRooms = async () => {
   return Promise.resolve(roomsMock)
@@ -97,7 +95,7 @@ const updateRoom = async () => {
   return Promise.resolve(roomsMock[0])
 }
 
-const deleteRoom = async () =>{
+const deleteRoom = async () => {
   return Promise.resolve(roomsMock[0])
 }
 

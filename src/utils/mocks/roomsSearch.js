@@ -5,10 +5,10 @@ const searchRoomByCityStub = sinon.stub()
 searchRoomByCityStub.withArgs('bogota').resolves(roomsMock[0])
 
 const find = city => {
-    return searchRoomByCityStub(city)
+  return searchRoomByCityStub(city)
 }
 
 module.exports = {
-    find,
-    searchRoomByCityStub
+  find,
+  searchRoomByCityStub
 }
