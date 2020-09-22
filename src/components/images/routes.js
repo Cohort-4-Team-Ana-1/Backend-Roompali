@@ -1,33 +1,33 @@
-const express = require("express");
-const  { uploadImage } = require("./controller");
-const singleUpload = uploadImage.single("image");
+const express = require('express')
+const { uploadImage } = require('./controller')
+const singleUpload = uploadImage.single('image')
 
 const imagesApi = (app) => {
-  const router = express.Router();
-  app.use("/api/images", router);
+  const router = express.Router()
+  app.use('/api/images', router)
 
-  router.post("/", function (req, res, next) {
+  router.post('/', (req, res, next) => {
     try {
-      singleUpload(req, res, async function (err) {
+      singleUpload(req, res, async (err) => {
         if (err) {
           return res.json({
             success: false,
             errors: {
-              title: "Image Upload Error",
+              title: 'Image Upload Error',
               detail: err.message,
-              error: err,
-            },
-          });
+              error: err
+            }
+          })
         }
         res.status(201).json({
-          message: "Image created",
+          message: 'Image created',
           image_url: req.file.location
-        });
-      });
+        })
+      })
     } catch (error) {
-      next(error);
+      next(error)
     }
-  });
-};
+  })
+}
 
-module.exports = imagesApi;
+module.exports = imagesApi
