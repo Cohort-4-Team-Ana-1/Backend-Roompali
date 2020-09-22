@@ -33,9 +33,10 @@
   },
   "homepage": "https://github.com/Cohort-4-Team-Ana-1/Backend-Roompali#readme",
   "dependencies": {
-    "@hapi/boom": "^9.1.0",
+    "@hapi/boom": "9.1.0",
     "aws-sdk": "2.756.0",
-    "bcrypt": "^5.0.0",
+    "bcrypt": "5.0.0",
+    "cors": "2.8.5",
     "dotenv": "8.2.0",
     "express": "4.17.1",
     "jsonwebtoken": "8.5.1",
@@ -44,7 +45,7 @@
     "multer-s3": "2.9.0",
     "passport": "0.4.1",
     "passport-jwt": "4.0.0",
-    "passport-local": "^1.0.0",
+    "passport-local": "1.0.0",
     "vercel": "20.1.0"
   },
   "devDependencies": {
@@ -57,6 +58,9 @@
     "supertest": "4.0.2"
   },
   "standard": {
-    "globals": ["it", "describe"]
+    "globals": [
+      "it",
+      "describe"
+    ]
   }
 }

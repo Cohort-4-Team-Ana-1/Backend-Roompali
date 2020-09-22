@@ -1,10 +1,14 @@
 const express = require('express')
 const database = require('./database')
+const cors = require('cors')
 const { config } = require('./config')
 const usersApi = require('./components/users/routes')
 const roomsApi = require('./components/rooms/routes')
 const imagesApi = require('./components/images/routes')
 const app = express()
+
+// Cors
+app.use(cors())
 
 // MongoDB Connection
 database.connection()
