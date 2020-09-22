@@ -3,6 +3,7 @@ const database = require('./database')
 const { config } = require('./config')
 const usersApi = require('./components/users/routes')
 const roomsApi = require('./components/rooms/routes')
+const imagesApi = require('./components/images/routes')
 const app = express()
 
 // MongoDB Connection
@@ -14,6 +15,7 @@ app.use(express.json({ extended: true }))
 // Routes
 usersApi(app)
 roomsApi(app)
+imagesApi(app)
 
 app.get('/', (req, res) => {
   res.send(`
