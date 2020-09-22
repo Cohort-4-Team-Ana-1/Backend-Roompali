@@ -12,9 +12,19 @@ aws.config.update({
   region: 'us-west-1'
 })
 
+const fileFilter = (req, file, cb) => {
+  if (file.mimetype === 'image/jpeg' || file.mimetype === 'image/png') {
+    cb(null, true);
+  } else {
+    cb(new Error('Invalid file type, only JPEG and PNG is allowed!'), false);
+  }
+};
+
+
 const uploadImage = multer({
+  fileFilter,
   storage: multerS3({
-    s3: s3,
+    s3,
     bucket: 'roompali-bucket-s3',
     acl: 'public-read',
     metadata (req, file, cb) {
