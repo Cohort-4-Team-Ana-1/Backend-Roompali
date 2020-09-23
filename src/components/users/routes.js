@@ -25,6 +25,7 @@ const usersApi = (app) => {
           res.send(err)
         }
         const payload = {
+          _id: user._id,
           user: user.username,
           email: user.email
         }
@@ -66,11 +67,19 @@ const usersApi = (app) => {
   })
   router.post('/', async (req, res, next) => {
     try {
-      const user = await usersControllers.createUser(req.body)
-      res.status(201).json({
-        message: 'User created',
-        body: user
-      })
+      const userEmail = await usersControllers.readUserByEmail(req.body.email)
+      if(userEmail !== null){
+        res.status(400).json({
+          message:'Invalid user'
+        })
+      } else {
+        const user = await usersControllers.createUser(req.body)
+        res.status(201).json({
+          message: 'User created',
+          body: user
+        })
+      }
+
     } catch (error) {
       next(error)
     }
@@ -79,16 +88,31 @@ const usersApi = (app) => {
     try {
       const userId = req.params.userId
       const userBody = req.body
-      const user = await usersControllers.updateUser(userId, userBody)
-      res.status(200).json({
-        message: 'User updated',
-        body: user
-      })
+      if(req.body.email !== null ){
+        const userEmail = await usersControllers.readUserByEmail(req.body.email)
+        if(userEmail !== null){
+          res.status(400).json({
+            message:'Invalid user'
+          })
+        } else {
+          const user = await usersControllers.updateUser(userId, userBody)
+          res.status(200).json({
+            message: 'User updated',
+            body: user
+          })
+        }
+      } else {
+        const user = await usersControllers.updateUser(userId, userBody)
+        res.status(200).json({
+          message: 'User updated',
+          body: user
+        })
+      }
     } catch (error) {
       next(error)
     }
   })
-  router.patch('/delete/:userId', async (req, res, next) => {
+  router.delete('/:userId', async (req, res, next) => {
     try {
       const userId = req.params.userId
       await usersControllers.deleteUser(userId)

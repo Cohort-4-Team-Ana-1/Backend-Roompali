@@ -37,7 +37,6 @@ const createRoom = async room => {
     cleaning: room.cleaning,
     closet: room.closet,
     room_description: room.room_description,
-    deleted: room.deleted
   }
   const newRoom = await Rooms.create(roomData)
   return newRoom
@@ -64,7 +63,6 @@ const updateRoom = async (roomId, room) => {
     cleaning: room.cleaning,
     closet: room.closet,
     room_description: room.room_description,
-    deleted: room.deleted
   }
 
   await Rooms.findByIdAndUpdate(
@@ -78,17 +76,10 @@ const updateRoom = async (roomId, room) => {
 }
 
 /**
- * Updates one room record using its _id attribute as guide, only changes the atribute deleted to true instead of erase the room.
+ * Deletes a room record by its roomId
  */
 const deleteRoom = async roomId => {
-  const room = {
-    deleted: true
-  }
-  await Rooms.findByIdAndUpdate(
-    roomId,
-    { $set: room },
-    { omitUndefined: true, upsert: true }
-  )
+  await Rooms.findByIdAndDelete(roomId)
 }
 
 /**
