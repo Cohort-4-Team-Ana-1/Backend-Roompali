@@ -96,7 +96,7 @@ const updateRoom = async () => {
 }
 
 const deleteRoom = async () => {
-  return Promise.resolve(roomsMock[0])
+  return Promise.resolve()
 }
 
 const searchRoomByCity = async () => {

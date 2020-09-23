@@ -71,7 +71,7 @@ const roomsApi = (app) => {
   /**
    * Route for deleteRoom Function
    */
-  router.patch('/delete/:roomId', async (req, res, next) => {
+  router.delete('/:roomId', async (req, res, next) => {
     try {
       const roomId = req.params.roomId
       await roomsController.deleteRoom(roomId)

@@ -87,19 +87,19 @@ describe('Rooms - Routes', () => {
 	})
 
 		// Delete Room
-		describe('PATCH /api/rooms/delete/:roomId', () => {
+		describe('DELETE /api/rooms/:roomId', () => {
 			it('Should respond with status 200', (done) => {
-				request.patch(`/api/rooms/${roomIdTest}`).expect(200, done)
+				request.delete(`/api/rooms/${roomIdTest}`).expect(200, done)
 			})
 	
 			it('Should respond with a Content-type json', (done) => {
 				request
-					.patch(`/api/rooms/delete/${roomIdTest}`)
+					.delete(`/api/rooms/${roomIdTest}`)
 					.expect('Content-type', /json/, done)
 			})
 
 			it('Should respond with the room deleted message', (done) => {
-				request.patch(`/api/rooms/delete/${roomIdTest}`).end((err, res) => {
+				request.delete(`/api/rooms/${roomIdTest}`).end((err, res) => {
 					assert.deepStrictEqual(res.body, {
 						message: `Room ${roomIdTest} deleted`,
 					})

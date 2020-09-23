@@ -60,9 +60,9 @@ describe('Controller - Rooms', () => {
   })
 
   describe('When deleteRoom function is called', async () => {
-    it('Should call findByIdAndUpdate function', async () => {
+    it('Should call findByIdAndDelete function', async () => {
       await roomsController.deleteRoom(roomIdTest)
-      assert.strictEqual(roomsControllerMock.updateRoomStub.called, true)
+      assert.strictEqual(roomsControllerMock.deleteRoomStub.called, true)
     })
   })
 

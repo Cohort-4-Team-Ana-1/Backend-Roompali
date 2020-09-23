@@ -8,6 +8,12 @@ const readUsers = () => {
   return users
 }
 
+const readUserByEmail = (userEmail) => {
+  const lowerCaseEmail = userEmail.toLowerCase()
+  const user = Users.findOne ({email: lowerCaseEmail})
+  return user || []
+}
+
 /**
  * Bring one user record
  */
@@ -22,10 +28,11 @@ const readOneUser = (userId) => {
  *  */
 const createUser = async user => {
   const encriptedPassword = await bcrypt.hash(user.password, 10)
+  const lowerCaseEmail = user.email.toLowerCase()
   const userData = {
     username: user.username,
     password: encriptedPassword,
-    email: user.email
+    email: lowerCaseEmail
   }
   const newUser = await Users.create(userData)
   return newUser
@@ -35,10 +42,12 @@ const createUser = async user => {
  */
 
 const updateUser = async (userId, user) => {
+  const encriptedPassword = await bcrypt.hash(user.password, 10)
+  const lowerCaseEmail = user.email.toLowerCase()
   const userChanges = {
     username: user.username,
-    password: user.password,
-    email: user.email
+    password: encriptedPassword,
+    email: lowerCaseEmail
   }
   await Users.findByIdAndUpdate(
     userId,
@@ -50,21 +59,15 @@ const updateUser = async (userId, user) => {
 }
 
 /**
- * Delete an user
+ * Delete an user record
  */
 const deleteUser = async (userId) => {
-  const userDeleted = {
-    deleted: true
-  }
-  await Users.findByIdAndUpdate(
-    userId,
-    { $set: userDeleted },
-    { omitUndefined: true, upsert: true }
-  )
+  await Users.findByIdAndDelete(userId)
 }
 
 module.exports = {
   readUsers,
+  readUserByEmail,
   readOneUser,
   createUser,
   updateUser,
