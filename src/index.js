@@ -6,6 +6,7 @@ const usersApi = require('./components/users/routes')
 const rolesApi = require('./components/roles/routes')
 const roomsApi = require('./components/rooms/routes')
 const imagesApi = require('./components/images/routes')
+const favoriteRoomsApi = require('./components/favorite-rooms/routes')
 const app = express()
 
 // Cors
@@ -22,6 +23,7 @@ usersApi(app)
 rolesApi(app)
 roomsApi(app)
 imagesApi(app)
+favoriteRoomsApi(app)
 
 app.get('/', (req, res) => {
   res.send(`

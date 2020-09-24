@@ -68,9 +68,9 @@ const usersApi = (app) => {
   router.post('/', async (req, res, next) => {
     try {
       const userEmail = await usersControllers.readUserByEmail(req.body.email)
-      if(userEmail !== null){
+      if (userEmail !== null) {
         res.status(400).json({
-          message:'Invalid user'
+          message: 'Invalid user'
         })
       } else {
         const user = await usersControllers.createUser(req.body)
@@ -79,7 +79,6 @@ const usersApi = (app) => {
           body: user
         })
       }
-
     } catch (error) {
       next(error)
     }
@@ -88,11 +87,11 @@ const usersApi = (app) => {
     try {
       const userId = req.params.userId
       const userBody = req.body
-      if(req.body.email !== null ){
+      if (req.body.email !== null) {
         const userEmail = await usersControllers.readUserByEmail(req.body.email)
-        if(userEmail !== null){
+        if (userEmail !== null) {
           res.status(400).json({
-            message:'Invalid user'
+            message: 'Invalid user'
           })
         } else {
           const user = await usersControllers.updateUser(userId, userBody)

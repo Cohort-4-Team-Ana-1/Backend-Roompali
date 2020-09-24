@@ -36,7 +36,7 @@ const createRoom = async room => {
     private_bathroom: room.private_bathroom,
     cleaning: room.cleaning,
     closet: room.closet,
-    room_description: room.room_description,
+    room_description: room.room_description
   }
   const newRoom = await Rooms.create(roomData)
   return newRoom
@@ -62,7 +62,7 @@ const updateRoom = async (roomId, room) => {
     private_bathroom: room.private_bathroom,
     cleaning: room.cleaning,
     closet: room.closet,
-    room_description: room.room_description,
+    room_description: room.room_description
   }
 
   await Rooms.findByIdAndUpdate(

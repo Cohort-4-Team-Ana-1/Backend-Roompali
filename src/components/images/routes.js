@@ -48,7 +48,7 @@ const imagesApi = (app) => {
         res.status(201).json({
           message: 'Images created',
           images_urls: req.files.map((files) => {
-            return  files.location
+            return files.location
           })
         })
       })

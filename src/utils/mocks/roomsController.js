@@ -10,8 +10,8 @@ const deleteRoomStub = sinon.stub()
 readRoomsStub.resolves(roomsMock)
 readOneRoomStub.withArgs(`${roomIdTest}`).resolves(roomsMock[0])
 createRoomStub.resolves(roomsMock[1])
-updateRoomStub.resolves({'nModified': 1})
-deleteRoomStub.resolves({'deletedCount': 1})
+updateRoomStub.resolves({ nModified: 1 })
+deleteRoomStub.resolves({ deletedCount: 1 })
 
 const find = () => {
   return readRoomsStub()

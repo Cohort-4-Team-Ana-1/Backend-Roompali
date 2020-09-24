@@ -10,7 +10,7 @@ const readUsers = () => {
 
 const readUserByEmail = (userEmail) => {
   const lowerCaseEmail = userEmail.toLowerCase()
-  const user = Users.findOne ({email: lowerCaseEmail})
+  const user = Users.findOne({ email: lowerCaseEmail })
   return user || []
 }
 
