@@ -21,8 +21,8 @@ const roomsMock = [
     room_email: 'lorenaroom@gmail.com',
     square_meters: 30,
     price: 500,
-    room_description:
-      'Alquilo habitación sin amoblar, con baño compartido, la habitación cuenta con armario (opción escritorio), buena iluminación y ventilación',
+    room_description:'Alquilo habitación sin amoblar, con baño compartido, la habitación cuenta con armario (opción escritorio), buena iluminación y ventilación',
+    owner: '5f6c23efb5007e439447534f',
     __v: 0
   },
   {
@@ -47,8 +47,8 @@ const roomsMock = [
     room_email: 'lorenaroom@gmail.com',
     square_meters: 30,
     price: 500,
-    room_description:
-      'Alquilo habitación sin amoblar, con baño compartido, la habitación cuenta con armario (opción escritorio), buena iluminación y ventilación',
+    room_description:'Alquilo habitación sin amoblar, con baño compartido, la habitación cuenta con armario (opción escritorio), buena iluminación y ventilación',
+    owner: '5f6c23efb5007e439447534f',
     __v: 0
   }
 ]
@@ -76,7 +76,7 @@ const roomMockAttributes = {
   cleaning: false,
   closet: true,
   room_description: 'Alquilo habitación sin amoblar, con baño compartido, la habitación cuenta con armario (opción escritorio), buena iluminación y ventilación',
-  deleted: false
+  owner: '5f6c23efb5007e439447534f'
 }
 
 const readRooms = async () => {

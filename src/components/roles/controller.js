@@ -4,7 +4,7 @@ const Roles = require('./schema')
  * Brings roles records
 */
 const readRoles = async () => {
-  const roles = await Roles.find({}).populate('user_data').populate('favorite_rooms').populate('own_rooms')
+  const roles = await Roles.find({})
   return roles
 }
 
@@ -12,7 +12,7 @@ const readRoles = async () => {
  * Bring one rol by id
  */
 const readOneRol = async (rolId) => {
-  const rol = await Roles.findById(rolId).populate('user_data').populate('favorite_rooms').populate('own_rooms')
+  const rol = await Roles.findById(rolId).populate('user_data').populate('favorite_rooms')
   return rol
 }
 
@@ -28,8 +28,7 @@ const createRol = async (rol) => {
     user_picture: rol.user_picture,
     favorite_rooms: rol.favorite_rooms,
     owner: rol.owner,
-    whatsapp: rol.whatsapp,
-    own_rooms: rol.own_rooms
+    whatsapp: '+57' + rol.whatsapp
   }
   const createdRol = await Roles.create(rolData)
   return createdRol
@@ -47,8 +46,7 @@ const updateRol = async (rolId, rol) => {
     user_picture: rol.user_picture,
     favorite_rooms: rol.favorite_rooms,
     owner: rol.owner,
-    whatsapp: '+57' + rol.whatsapp,
-    own_rooms: rol.own_rooms
+    whatsapp: '+57' + rol.whatsapp
   }
   await Roles.findByIdAndUpdate(
     rolId,

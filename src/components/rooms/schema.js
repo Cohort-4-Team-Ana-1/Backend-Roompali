@@ -17,7 +17,8 @@ const Rooms = new Schema({
   private_bathroom: { type: Boolean, default: false },
   cleaning: { type: Boolean, default: false },
   closet: { type: Boolean, default: false },
-  room_description: { type: String, required: true }
+  room_description: { type: String, required: true },
+  owner: {type: Schema.ObjectId, ref: 'Roles'}
 })
 
 module.exports = mongoose.model('Rooms', Rooms)

@@ -4,7 +4,7 @@ const Rooms = require('./schema')
  * Brings all room records with all its attributes.
  */
 const readRooms = async () => {
-  const rooms = await Rooms.find({})
+  const rooms = await Rooms.find({}).populate('owner')
   return rooms
 }
 
@@ -12,7 +12,7 @@ const readRooms = async () => {
  * Brings one room record with all its attributes using its _id atribute as guide.
  */
 const readOneRoom = async roomId => {
-  const room = await Rooms.findById(roomId)
+  const room =  await Rooms.findById(roomId).populate('owner')
   return room
 }
 
@@ -20,11 +20,12 @@ const readOneRoom = async roomId => {
  * Creates a room record with all its attributes.
  */
 const createRoom = async room => {
+  const cityProccesed = room.city.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '')
   const roomData = {
     room_name: room.room_name,
     main_image: room.main_image,
     secondary_image: room.secondary_image,
-    city: room.city,
+    city: cityProccesed,
     address: room.address,
     room_whatsapp: room.room_whatsapp,
     room_email: room.room_email,
@@ -36,7 +37,8 @@ const createRoom = async room => {
     private_bathroom: room.private_bathroom,
     cleaning: room.cleaning,
     closet: room.closet,
-    room_description: room.room_description
+    room_description: room.room_description,
+    owner: room.owner
   }
   const newRoom = await Rooms.create(roomData)
   return newRoom
@@ -46,11 +48,12 @@ const createRoom = async room => {
  * Updates one room record using its _id attribute as guide.
  */
 const updateRoom = async (roomId, room) => {
+  const cityProccesed = room.city.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '')
   const roomChanges = {
     room_name: room.room_name,
     main_image: room.main_image,
     secondary_image: room.secondary_image,
-    city: room.city,
+    city: cityProccesed,
     address: room.address,
     room_whatsapp: room.room_whatsapp,
     room_email: room.room_email,
@@ -62,7 +65,8 @@ const updateRoom = async (roomId, room) => {
     private_bathroom: room.private_bathroom,
     cleaning: room.cleaning,
     closet: room.closet,
-    room_description: room.room_description
+    room_description: room.room_description,
+    owner: room.owner
   }
 
   await Rooms.findByIdAndUpdate(

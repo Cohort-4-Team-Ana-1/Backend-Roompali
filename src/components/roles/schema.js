@@ -9,8 +9,7 @@ const Roles = new Schema({
   whatsapp: { type: String, required: true },
   user_picture: { type: String, required: true },
   favorite_rooms: [{ type: Schema.ObjectId, ref: 'Rooms' }],
-  owner: { type: Boolean, default: false },
-  own_rooms: [{ type: Schema.ObjectId, ref: 'Rooms' }]
+  owner: { type: Boolean, default: false }
 })
 
 module.exports = mongoose.model('Roles', Roles)
