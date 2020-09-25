@@ -12,9 +12,9 @@
     <img src="https://img.shields.io/badge/Status-In progress-orange">
     <img src="https://img.shields.io/badge/Coverage-yellow">
 </div>
- 
+
 Roompali API
- 
+
 ## Table of Contents
 - [Features](#features)
 - [Steps to Collaborate](#steps-to-collaborate)
