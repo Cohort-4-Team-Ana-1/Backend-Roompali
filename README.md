@@ -12,9 +12,9 @@
     <img src="https://img.shields.io/badge/Status-In progress-orange">
     <img src="https://img.shields.io/badge/Coverage-yellow">
 </div>
-
+ 
 Roompali API
-
+ 
 ## Table of Contents
 - [Features](#features)
 - [Steps to Collaborate](#steps-to-collaborate)
@@ -60,7 +60,7 @@ Roompali API
 4. Create an .env file and use the .env.example file as a guide to fill in the environment variables.
 5. Run the project: `npm run dev`
 6. Do the necessary improvements and make a commit: `git commit -am "<commit message>"` or use `git add .` and then `git commit -m "<commit message>"`
-7. Upload changes to the repository created with the fork: `git push origin <rama que se uso>`
+7. Upload changes to the repository created with the fork: `git push origin <branch name>`
 8. Create a merge request to the original project.
 
 ## Ways to Use the API
