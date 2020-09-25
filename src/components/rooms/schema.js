@@ -7,8 +7,6 @@ const Rooms = new Schema({
   secondary_image: [{ type: String, required: true }],
   city: { type: String, required: true },
   address: { type: String, required: true },
-  room_whatsapp: { type: String, required: true },
-  room_email: { type: String, required: true },
   square_meters: { type: Number, required: true },
   furniture: [{ type: String }],
   price: { type: Number, required: true },

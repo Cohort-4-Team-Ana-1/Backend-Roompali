@@ -27,12 +27,10 @@ const readOneUser = (userId) => {
  * Create an new user
  *  */
 const createUser = async user => {
-  const encriptedPassword = await bcrypt.hash(user.password, 10)
-  const lowerCaseEmail = user.email.toLowerCase()
   const userData = {
     username: user.username,
-    password: encriptedPassword,
-    email: lowerCaseEmail
+    password: await bcrypt.hash(user.password, 10),
+    email: user.email.toLowerCase()
   }
   const newUser = await Users.create(userData)
   return newUser
@@ -42,12 +40,10 @@ const createUser = async user => {
  */
 
 const updateUser = async (userId, user) => {
-  const encriptedPassword = await bcrypt.hash(user.password, 10)
-  const lowerCaseEmail = user.email.toLowerCase()
   const userChanges = {
     username: user.username,
-    password: encriptedPassword,
-    email: lowerCaseEmail
+    password: user.password === undefined ? user.password : await bcrypt.hash(user.password, 10),
+    email: user.email === undefined ? user.email : user.email.toLowerCase()
   }
   await Users.findByIdAndUpdate(
     userId,
