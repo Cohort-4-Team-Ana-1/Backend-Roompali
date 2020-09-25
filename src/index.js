@@ -27,7 +27,7 @@ favoriteRoomsApi(app)
 
 app.get('/', (req, res) => {
   res.send(`
-  Server Online
+  Server Status: [Online]
   
   For more information visit: https://github.com/Cohort-4-Team-Ana-1/Backend-Roompali`)
 })

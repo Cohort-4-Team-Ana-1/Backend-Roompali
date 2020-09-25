@@ -92,7 +92,6 @@ const deleteRoom = async roomId => {
 
 const searchRoomByCity = async city => {
   const cityProccesed = city.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '')
-  console.log(cityProccesed)
   const rooms = await Rooms.find({ city: cityProccesed })
   return rooms
 }
