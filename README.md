@@ -4,7 +4,7 @@
 </h1>
 <p align="center"><p>
 <div align="center">
-    [<img src="https://img.shields.io/badge/Node-14.4.0-darkgreen">](#https://nodejs.org/en/)
+    [![Node]("https://img.shields.io/badge/Node-14.4.0-darkgreen")](https://nodejs.org/)
     <img src="https://img.shields.io/badge/Mongoose-5.9.24-darkred">
     <img src="https://img.shields.io/badge/Express.js-4.17.1-lightgrey">
     <img src="https://img.shields.io/badge/MongoDB-4.0-Green">
@@ -357,7 +357,7 @@ Roompali API
 - [Ricardo Aragón (Demianzx)](https://github.com/Demianzx)
 - [Moisés Luna (moilu)](https://github.com/moilu)
 - [Samuel Gonzalez (xame2005)](https://github.com/xame2005)
-- [Francisco Suarez (Ulzahk)](#https://github.com/Ulzahk)
+- [Francisco Suarez (Ulzahk)](https://github.com/Ulzahk)
 
 ## License
 MIT License 
