@@ -12,7 +12,7 @@ const readRoles = async () => {
  * Bring one rol by id
  */
 const readOneRol = async (rolId) => {
-  const rol = await Roles.findById(rolId).populate('user_data').populate('favorite_rooms')
+  const rol = await Roles.findById(rolId).populate('favorite_rooms')
   return rol
 }
 
@@ -24,11 +24,11 @@ const createRol = async (rol) => {
     user_data: rol.user_data,
     first_name: rol.first_name,
     last_name: rol.last_name,
-    contact_email: rol.contact_email,
+    contact_email: rol.contact_email.toLowerCase(),
     user_picture: rol.user_picture,
     favorite_rooms: rol.favorite_rooms,
     owner: rol.owner,
-    whatsapp: '+57' + rol.whatsapp
+    whatsapp: rol.whatsapp === undefined ? rol.whatsapp : '+57' + rol.whatsapp 
   }
   const createdRol = await Roles.create(rolData)
   return createdRol
@@ -42,11 +42,11 @@ const updateRol = async (rolId, rol) => {
     user_data: rol.user_data,
     first_name: rol.first_name,
     last_name: rol.last_name,
-    contact_email: rol.contact_email,
+    contact_email: rol.contact_email === undefined ? rol.contact_email : rol.contact_email.toLowerCase(),
     user_picture: rol.user_picture,
     favorite_rooms: rol.favorite_rooms,
     owner: rol.owner,
-    whatsapp: '+57' + rol.whatsapp
+    whatsapp: rol.whatsapp === undefined ? rol.whatsapp : '+57' + rol.whatsapp 
   }
   await Roles.findByIdAndUpdate(
     rolId,

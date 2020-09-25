@@ -87,7 +87,7 @@ const usersApi = (app) => {
     try {
       const userId = req.params.userId
       const userBody = req.body
-      if (req.body.email !== null) {
+      if (req.body.email !== undefined) {
         const userEmail = await usersControllers.readUserByEmail(req.body.email)
         if (userEmail !== null) {
           res.status(400).json({
