@@ -4,7 +4,7 @@
 </h1>
 <p align="center"><p>
 <div align="center">
-    [![Node]("https://img.shields.io/badge/Node-14.4.0-darkgreen")](https://nodejs.org/)
+    <img src="https://img.shields.io/badge/Node-14.4.0-darkgreen">
     <img src="https://img.shields.io/badge/Mongoose-5.9.24-darkred">
     <img src="https://img.shields.io/badge/Express.js-4.17.1-lightgrey">
     <img src="https://img.shields.io/badge/MongoDB-4.0-Green">
@@ -33,8 +33,18 @@ Roompali API
     - [PATCH Rol](#patch-rol)
     - [DELETE Rol](#delete-rol)
   - [Rooms](#rooms)
+    - [GET Rooms](#get-rooms)
+    - [GET One Room](#get-one-room)
+    - [GET Room By City](#get-room-by-city)
+    - [POST Room](#post-room)
+    - [PATCH Room](#patch-room)
+    - [DELETE Room](#delete-room)
   - [Favorite-Rooms](#favorite-rooms)
+    - [POST Add Favorite Room](#post-add-favorite-room)
+    - [POST Remove Favorite Room](#post-remove-favorite-room)
   - [Images](#images)
+    - [POST Image](#post-image)
+    - [POST Multi Images](#post-multi-images)
 - [More Information](#more-information)
 - [Team Members](#team-members)
 - [License](#license)
@@ -320,28 +330,367 @@ Roompali API
 ### Rooms
 
 ### GET Rooms
+- URL: `http://localhost:3500/api/rooms`
+- API Roompali: `https://backend-roompali.vercel.app/api/rooms`
+> Response
+```
+{
+    "message": "Rooms listed",
+    "total": 1,
+    "body": [
+        {
+            "secondary_image": [
+                "https://images.pexels.com/photos/2082087/pexels-photo-2082087.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+                "https://images.pexels.com/photos/2062431/pexels-photo-2062431.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+            ],
+            "furniture": [
+                "cama",
+                "mesa"
+            ],
+            "available": true,
+            "wifi": true,
+            "private_bathroom": false,
+            "cleaning": false,
+            "closet": true,
+            "_id": "5f6e14e1a5f7b53e3c305685",
+            "room_name": "El departamento de Juan",
+            "main_image": "https://images.pexels.com/photos/2462015/pexels-photo-2462015.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+            "city": "medellin",
+            "address": "Cra. 43 #65-9, Medellín, Antioquia",
+            "square_meters": 30,
+            "price": 300000,
+            "room_description": "Alquilo habitación con baño compartido, la habitación cuenta con armario, buena iluminación y ventilación",
+            "owner": {
+                "favorite_rooms": [],
+                "owner": false,
+                "_id": "5f6e00dc8a4b5b136c0cb776",
+                "user_data": "5f6df5cab628f31a0ce367bb",
+                "first_name": "Juan",
+                "last_name": "Ramirez",
+                "contact_email": "ramirezsociety@gmail.com",
+                "user_picture": "https://images.freeimages.com/images/large-previews/28f/man-with-laptop-1238347.jpg",
+                "whatsapp": "+573117897456",
+                "__v": 0
+            },
+            "__v": 0
+        }
+    ]
+}
+```
 
 ### GET One Room
+- URL: `http://localhost:3500/api/rooms/<roomId>`
+- API Roompali: `https://backend-roompali.vercel.app/api/rooms/<roomId>`
+- Example: `https://backend-roompali.vercel.app/api/rooms/5f6e14e1a5f7b53e3c305685`
+> Response
+```
+{
+    "message": "Room listed",
+    "body": {
+        "secondary_image": [
+            "https://images.pexels.com/photos/2082087/pexels-photo-2082087.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+            "https://images.pexels.com/photos/2062431/pexels-photo-2062431.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+        ],
+        "furniture": [
+            "cama",
+            "mesa"
+        ],
+        "available": true,
+        "wifi": true,
+        "private_bathroom": false,
+        "cleaning": false,
+        "closet": true,
+        "_id": "5f6e14e1a5f7b53e3c305685",
+        "room_name": "El departamento de Juan",
+        "main_image": "https://images.pexels.com/photos/2462015/pexels-photo-2462015.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "city": "medellin",
+        "address": "Cra. 43 #65-9, Medellín, Antioquia",
+        "square_meters": 30,
+        "price": 300000,
+        "room_description": "Alquilo habitación con baño compartido, la habitación cuenta con armario, buena iluminación y ventilación",
+        "owner": {
+            "favorite_rooms": [],
+            "owner": false,
+            "_id": "5f6e00dc8a4b5b136c0cb776",
+            "user_data": "5f6df5cab628f31a0ce367bb",
+            "first_name": "Juan",
+            "last_name": "Ramirez",
+            "contact_email": "ramirezsociety@gmail.com",
+            "user_picture": "https://images.freeimages.com/images/large-previews/28f/man-with-laptop-1238347.jpg",
+            "whatsapp": "+573117897456",
+            "__v": 0
+        },
+        "__v": 0
+    }
+}
+```
 
 ### GET Room By City
+- URL: `http://localhost:3500/api/rooms-search?city=<cityName>`
+- API Roompali: `https://backend-roompali.vercel.app/api/rooms-search?city=<cityName>`
+- Example: `https://backend-roompali.vercel.app/api/rooms-search?city=Medell%C3%ADn`
+> Response
+```
+{
+    "message": "Rooms finded",
+    "total": 1,
+    "body": [
+        {
+            "secondary_image": [
+                "https://images.pexels.com/photos/2082087/pexels-photo-2082087.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+                "https://images.pexels.com/photos/2062431/pexels-photo-2062431.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+            ],
+            "furniture": [
+                "cama",
+                "mesa"
+            ],
+            "available": true,
+            "wifi": true,
+            "private_bathroom": false,
+            "cleaning": false,
+            "closet": true,
+            "_id": "5f6e14e1a5f7b53e3c305685",
+            "room_name": "El departamento de Juan",
+            "main_image": "https://images.pexels.com/photos/2462015/pexels-photo-2462015.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+            "city": "medellin",
+            "address": "Cra. 43 #65-9, Medellín, Antioquia",
+            "square_meters": 30,
+            "price": 300000,
+            "room_description": "Alquilo habitación con baño compartido, la habitación cuenta con armario, buena iluminación y ventilación",
+            "owner": {
+                "favorite_rooms": [],
+                "owner": false,
+                "_id": "5f6e00dc8a4b5b136c0cb776",
+                "user_data": "5f6df5cab628f31a0ce367bb",
+                "first_name": "Juan",
+                "last_name": "Ramirez",
+                "contact_email": "ramirezsociety@gmail.com",
+                "user_picture": "https://images.freeimages.com/images/large-previews/28f/man-with-laptop-1238347.jpg",
+                "whatsapp": "+573117897456",
+                "__v": 0
+            },
+            "__v": 0
+        }
+    ]
+}
+```
 
 ### POST Room
+- URL: `http://localhost:3500/api/rooms`
+- API Roompali: `https://backend-roompali.vercel.app/api/rooms`
+> Request
+```
+{
+    "room_name": "El departamento de Juan",
+    "main_image": "https://images.pexels.com/photos/2462015/pexels-photo-2462015.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "secondary_image": [
+        "https://images.pexels.com/photos/2082087/pexels-photo-2082087.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "https://images.pexels.com/photos/2062431/pexels-photo-2062431.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    ],
+    "city": "Medellín",
+    "address": "Cra. 43 #65-9, Medellín, Antioquia",
+    "square_meters": 30,
+    "furniture": [
+        "cama",
+        "mesa"
+    ],
+    "price": 300000,
+    "available": true,
+    "wifi": true ,
+    "private_bathroom": false,
+    "cleaning": false,
+    "closet": true,
+    "room_description": "Alquilo habitación con baño compartido, la habitación cuenta con armario, buena iluminación y ventilación",
+    "owner": "5f6e00dc8a4b5b136c0cb776"
+}
+```
+> Response
+```
+{
+    "message": "Room created",
+    "body": {
+        "secondary_image": [
+            "https://images.pexels.com/photos/2082087/pexels-photo-2082087.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+            "https://images.pexels.com/photos/2062431/pexels-photo-2062431.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+        ],
+        "furniture": [
+            "cama",
+            "mesa"
+        ],
+        "available": true,
+        "wifi": true,
+        "private_bathroom": false,
+        "cleaning": false,
+        "closet": true,
+        "_id": "5f6e14e1a5f7b53e3c305685",
+        "room_name": "El departamento de Juan",
+        "main_image": "https://images.pexels.com/photos/2462015/pexels-photo-2462015.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "city": "medellin",
+        "address": "Cra. 43 #65-9, Medellín, Antioquia",
+        "square_meters": 30,
+        "price": 300000,
+        "room_description": "Alquilo habitación con baño compartido, la habitación cuenta con armario, buena iluminación y ventilación",
+        "owner": "5f6e00dc8a4b5b136c0cb776",
+        "__v": 0
+    }
+}
+```
 
 ### PATCH Room
+- URL: `http://localhost:3500/api/rooms/<roomId>`
+- API Roompali: `https://backend-roompali.vercel.app/api/rooms/<roomId>`
+- Example: `https://backend-roompali.vercel.app/api/rooms/5f6e14e1a5f7b53e3c305685`
+> Request
+```
+{
+    "available": false,
+    "price": 270000
+}
+```
+> Response
+```
+{
+    "message": "Room 5f6e14e1a5f7b53e3c305685 updated",
+    "body": {
+        "secondary_image": [
+            "https://images.pexels.com/photos/2082087/pexels-photo-2082087.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+            "https://images.pexels.com/photos/2062431/pexels-photo-2062431.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+        ],
+        "furniture": [
+            "cama",
+            "mesa"
+        ],
+        "available": false,
+        "wifi": true,
+        "private_bathroom": false,
+        "cleaning": false,
+        "closet": true,
+        "_id": "5f6e14e1a5f7b53e3c305685",
+        "room_name": "El departamento de Juan",
+        "main_image": "https://images.pexels.com/photos/2462015/pexels-photo-2462015.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "city": "medellin",
+        "address": "Cra. 43 #65-9, Medellín, Antioquia",
+        "square_meters": 30,
+        "price": 270000,
+        "room_description": "Alquilo habitación con baño compartido, la habitación cuenta con armario, buena iluminación y ventilación",
+        "owner": "5f6e00dc8a4b5b136c0cb776",
+        "__v": 0
+    }
+}
+```
 
 ### Delete Room
-
+- URL: `http://localhost:3500/api/rooms/<roomId>`
+- API Roompali: `https://backend-roompali.vercel.app/api/rooms/<roomId>`
+- Example: `https://backend-roompali.vercel.app/api/rooms/5f6e14e1a5f7b53e3c305685`
+> Response
+```
+{
+    "message": "Room 5f6e14e1a5f7b53e3c305685 deleted"
+}
+```
 ### Favorite-Rooms
 
 ### POST Add Favorite Room
+- URL: `http://localhost:3500/api/favorite-rooms/add`
+- API Roompali: `https://backend-roompali.vercel.app/api/favorite-rooms/add`
+> Request
+```
+{
+    "rolId": "5f6d3fc940e27409105383c0",
+    "roomId": "5f6e18a640fc1a286c84456c"
+}
+```
+> Response
+```
+{
+    "message": "New room added to favorites_rooms section",
+    "body": {
+        "favorite_rooms": [
+            "5f6e18a640fc1a286c84456c"
+        ],
+        "owner": true,
+        "_id": "5f6d3fc940e27409105383c0",
+        "user_data": "5f6ab22c32458f354459002c",
+        "first_name": "Pedro",
+        "last_name": "Rodriguez",
+        "contact_email": "pedror@companypr.com",
+        "user_picture": "https://images.freeimages.com/images/large-previews/253/homeless-1437118.jpg",
+        "whatsapp": "+573054678124",
+        "__v": 0
+    }
+}
+```
 
 ### POST Remove Favorite Room
+- URL: `http://localhost:3500/api/favorite-rooms/remove`
+- API Roompali: `https://backend-roompali.vercel.app/api/favorite-rooms/remove`
+> Request
+```
+{
+    "rolId": "5f6d3fc940e27409105383c0",
+    "roomId": "5f6e18a640fc1a286c84456c"
+}
+```
+> Response
+```
+{
+    "message": "Favorite room 5f6d3fc940e27409105383c0 removed",
+    "body": {
+        "favorite_rooms": [],
+        "owner": true,
+        "_id": "5f6d3fc940e27409105383c0",
+        "user_data": "5f6ab22c32458f354459002c",
+        "first_name": "Pedro",
+        "last_name": "Rodriguez",
+        "contact_email": "pedror@companypr.com",
+        "user_picture": "https://images.freeimages.com/images/large-previews/253/homeless-1437118.jpg",
+        "whatsapp": "+573054678124",
+        "__v": 0
+    }
+}
+```
 
 ### Images
 
 ### POST Image
+- URL: `http://localhost:3500/api/images`
+- API Roompali: `https://backend-roompali.vercel.app/api/images`
+- Formats: `.png` and `.jpeg`
+> Request
+```
+Key: 'image'
+Value: 'test-image.png'
+```
+> Response
+```
+{
+    "message": "Image created",
+    "image_url": "https://roompali-bucket-s3.s3.us-west-1.amazonaws.com/test-image-1601051847856.png"
+}
+```
 
 ### POST Multi Images
+- URL: `http://localhost:3500/api/images/multi`
+- API Roompali: `https://backend-roompali.vercel.app/api/images/multi`
+- Formats: `.png` and `.jpeg`
+> Request
+```
+Key: 'image'
+Value: 'test-image.png'
+Key: 'image'
+Value: 'test-image.png'
+```
+> Response
+```
+{
+    "message": "Images created",
+    "images_urls": [
+        "https://roompali-bucket-s3.s3.us-west-1.amazonaws.com/test-image-1601051934001.png",
+        "https://roompali-bucket-s3.s3.us-west-1.amazonaws.com/test-image-1601051934005.png"
+    ]
+}
+```
 
 ## More Information
 |Name                        |Link|

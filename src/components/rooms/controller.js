@@ -20,12 +20,11 @@ const readOneRoom = async roomId => {
  * Creates a room record with all its attributes.
  */
 const createRoom = async room => {
-  const cityProccesed = room.city.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '')
   const roomData = {
     room_name: room.room_name,
     main_image: room.main_image,
     secondary_image: room.secondary_image,
-    city: cityProccesed,
+    city: room.city.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ''),
     address: room.address,
     square_meters: room.square_meters,
     furniture: room.furniture,
@@ -46,12 +45,11 @@ const createRoom = async room => {
  * Updates one room record using its _id attribute as guide.
  */
 const updateRoom = async (roomId, room) => {
-  const cityProccesed = room.city.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '')
   const roomChanges = {
     room_name: room.room_name,
     main_image: room.main_image,
     secondary_image: room.secondary_image,
-    city: cityProccesed,
+    city: room.city === undefined ? room.city : room.city.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ''),
     address: room.address,
     square_meters: room.square_meters,
     furniture: room.furniture,
@@ -88,7 +86,7 @@ const deleteRoom = async roomId => {
 
 const searchRoomByCity = async city => {
   const cityProccesed = city.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '')
-  const rooms = await Rooms.find({ city: cityProccesed })
+  const rooms = await Rooms.find({ city: cityProccesed }).populate('owner')
   return rooms
 }
 
