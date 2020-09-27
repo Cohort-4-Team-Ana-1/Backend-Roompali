@@ -10,12 +10,13 @@
     <img src="https://img.shields.io/badge/MongoDB-4.0-Green">
     <img src="https://img.shields.io/badge/Passport-0.4.1-black">
     <img src="https://img.shields.io/badge/Status-In progress-orange">
-    <img src="https://img.shields.io/badge/Coverage-yellow">
+    <img src="https://img.shields.io/badge/NYC -80％-Green">
 </div>
 
 Roompali API is a support structure that aims to provide the routes, data and other means of connection to achieve the Roompali APP's functionality.
 
 ## Table of Contents
+- [NYC Report](#nyc-report)
 - [Steps to Collaborate](#steps-to-collaborate)
 - [Ways to Use the API](#ways-to-use-the-api)
   - [Users](#users)
@@ -47,6 +48,10 @@ Roompali API is a support structure that aims to provide the routes, data and ot
 - [More Information](#more-information)
 - [Team Members](#team-members)
 - [License](#license)
+
+## NYC Report
+Example
+<img src="https://roompali-bucket-s3.s3.us-west-1.amazonaws.com/Report-example-1601214268881.png">
 
 ## Steps to Collaborate
 1. Fork the project: by clicking the fork button (located at the top right corner)
