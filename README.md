@@ -50,8 +50,8 @@ Roompali API is a support structure that aims to provide the routes, data and ot
 - [License](#license)
 
 ## NYC Report
-Example
-![](https://roompali-bucket-s3.s3.us-west-1.amazonaws.com/Report-example-1601214268881.png)
+
+<img alt="NYC Report" src="https://roompali-bucket-s3.s3.us-west-1.amazonaws.com/Report-example-1601214268881.png" width="100%">
 
 ## Steps to Collaborate
 1. Fork the project: by clicking the fork button (located at the top right corner)
