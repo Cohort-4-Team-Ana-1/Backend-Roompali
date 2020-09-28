@@ -10,7 +10,7 @@ const Rooms = new Schema({
   square_meters: { type: Number, required: true },
   available: { type: Boolean, default: true },
   room_description: { type: String, required: true },
-  owner: {type: Schema.ObjectId, ref: 'Roles'},
+  owner: {type: Schema.ObjectId, ref: 'Roles', required: true},
   price: { type: Number, required: true },
   bed: {type: Boolean, default: false},
   desk: {type: Boolean, default: false},
