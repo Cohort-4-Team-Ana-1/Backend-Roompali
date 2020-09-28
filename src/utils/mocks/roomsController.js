@@ -9,7 +9,7 @@ const deleteRoomStub = sinon.stub()
 
 readRoomsStub.resolves(roomsMock)
 readOneRoomStub.withArgs(`${roomIdTest}`).resolves(roomsMock[0])
-createRoomStub.resolves(roomsMock[1])
+createRoomStub.withArgs(`${roomIdTest}`).resolves(roomsMock[0])
 updateRoomStub.resolves({ nModified: 1 })
 deleteRoomStub.resolves({ deletedCount: 1 })
 
@@ -21,8 +21,8 @@ const findById = roomId => {
   return readOneRoomStub(roomId)
 }
 
-const create = room => {
-  return createRoomStub(room)
+const create = (rolId, room) => {
+  return createRoomStub(rolId, room)
 }
 
 const findByIdAndUpdate = () => {

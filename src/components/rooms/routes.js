@@ -1,5 +1,6 @@
 const express = require('express')
 const roomsController = require('./controller')
+const rolesController = require('../roles/controller')
 
 const roomsApi = (app) => {
   const router = express.Router()
@@ -41,7 +42,8 @@ const roomsApi = (app) => {
    */
   router.post('/', async (req, res, next) => {
     try {
-      const roomCreated = await roomsController.createRoom(req.body)
+      const rolId = await rolesController.searchRolByUserId(req.body.userId)
+      const roomCreated = await roomsController.createRoom(rolId._id, req.body)
       res.status(201).json({
         message: 'Room created',
         body: roomCreated
