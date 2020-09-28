@@ -9,10 +9,9 @@ const readUsers = () => {
 };
 
 const readUserByEmail = (userEmail) => {
-  const lowerCaseEmail =
-    user.email === undefined ? user.email : user.email.toLowerCase();
+  const lowerCaseEmail = userEmail === undefined ? userEmail : userEmail.toLowerCase();
   const user = Users.findOne({ email: lowerCaseEmail });
-  return user || [];
+  return user;
 };
 
 /**
