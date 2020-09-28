@@ -10,7 +10,7 @@ const {
 const roomsControllerMock = require('../utils/mocks/roomsController')
 const roomsControllerSearchMock = require('../utils/mocks/roomsSearch')
 
-describe.only('Controller - Rooms', () => {
+describe('Controller - Rooms', () => {
   const roomsController = proxyquire('../components/rooms/controller', {
     './schema': roomsControllerMock
   })
