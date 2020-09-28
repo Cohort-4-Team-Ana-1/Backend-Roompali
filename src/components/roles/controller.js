@@ -64,10 +64,16 @@ const deleteRol = async (rolId) => {
   await Roles.findByIdAndDelete(rolId)
 }
 
+const searchRolByUserId = async (userId) => {
+  const rol = await Roles.findOne({ user_data: userId })
+  return rol
+}
+
 module.exports = {
   readRoles,
   readOneRol,
   createRol,
   updateRol,
-  deleteRol
+  deleteRol,
+  searchRolByUserId
 }

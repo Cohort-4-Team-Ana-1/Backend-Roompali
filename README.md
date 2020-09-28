@@ -16,6 +16,7 @@
 Roompali API is a support structure that aims to provide the routes, data and other means of connection to achieve the Roompali APP's functionality.
 
 ## Table of Contents
+
 - [NYC Report](#nyc-report)
 - [Steps to Collaborate](#steps-to-collaborate)
 - [Ways to Use the API](#ways-to-use-the-api)
@@ -54,6 +55,7 @@ Roompali API is a support structure that aims to provide the routes, data and ot
 ![Image](https://roompali-bucket-s3.s3-us-west-1.amazonaws.com/report-example.png)
 
 ## Steps to Collaborate
+
 1. Fork the project: by clicking the fork button (located at the top right corner)
 2. Clone the project: `git clone https://github.com/<your username>/Backend-Roompali.git`
 3. Install dependencies: `npm install` or use `npm i`
@@ -68,9 +70,11 @@ Roompali API is a support structure that aims to provide the routes, data and ot
 ### Users
 
 ### GET Users
+
 - URL: `http://localhost:3500/api/users`
 - API Roompali: `https://backend-roompali.vercel.app/api/users`
-> Response
+  > Response
+
 ```
 {
     "message": "Users listed",
@@ -95,10 +99,12 @@ Roompali API is a support structure that aims to provide the routes, data and ot
 ```
 
 ### GET One User
+
 - URL: `http://localhost:3500/api/users/<userId>`
 - API Roompali: `https://backend-roompali.vercel.app/api/users/<userId>`
 - Example: `https://backend-roompali.vercel.app/api/users/5f6ab22c32458f354459002c`
-> Response
+  > Response
+
 ```
 {
     "message": "User listed",
@@ -113,9 +119,11 @@ Roompali API is a support structure that aims to provide the routes, data and ot
 ```
 
 ### POST User
+
 - URL: `http://localhost:3500/api/users`
 - API Roompali: `https://backend-roompali.vercel.app/api/users`
-> Request
+  > Request
+
 ```
 {
     "username":"Juan Ramirez",
@@ -123,7 +131,9 @@ Roompali API is a support structure that aims to provide the routes, data and ot
     "email":"juanr@gmail.com"
 }
 ```
+
 > Response
+
 ```
 {
     "message": "User created",
@@ -136,17 +146,22 @@ Roompali API is a support structure that aims to provide the routes, data and ot
     }
 }
 ```
+
 ### PATCH User
+
 - URL: `http://localhost:3500/api/users/<userId>`
 - API Roompali: `https://backend-roompali.vercel.app/api/users/<userId>`
 - Example: `https://backend-roompali.vercel.app/api/users/5f6ab22c32458f354459002c`
-> Request
+  > Request
+
 ```
 {
     "password": "password123*MR*"
 }
 ```
+
 > Response
+
 ```
 {
     "message": "User updated",
@@ -160,28 +175,34 @@ Roompali API is a support structure that aims to provide the routes, data and ot
 }
 ```
 
-
 ### DELETE User
+
 - URL: `http://localhost:3500/api/users/<userId>`
 - API Roompali: `https://backend-roompali.vercel.app/api/users/<userId>`
 - Example: `https://backend-roompali.vercel.app/api/users/5f6ab22c32458f354459002c`
-> Response
+  > Response
+
 ```
 {
     "message": "User 5f6ab22c32458f354459002c deleted"
 }
 ```
+
 ### Sign-in User
+
 - URL: `http://localhost:3500/api/users/sign-in`
 - API Roompali: `https://backend-roompali.vercel.app/api/users/sign-in`
-> Request
+  > Request
+
 ```
 {
     "email":"juanr@gmail.com",
     "password":"12345*"
 }
 ```
+
 > Response
+
 ```
 {
     "payload": {
@@ -196,9 +217,11 @@ Roompali API is a support structure that aims to provide the routes, data and ot
 ### Roles
 
 ### GET Roles
+
 - URL: `http://localhost:3500/api/roles`
 - API Roompali: `https://backend-roompali.vercel.app/api/roles`
-> Response
+  > Response
+
 ```
 {
     "message": "Roles listed",
@@ -233,10 +256,12 @@ Roompali API is a support structure that aims to provide the routes, data and ot
 ```
 
 ### GET One Rol
+
 - URL: `http://localhost:3500/api/roles/<rolId>`
 - API Roompali: `https://backend-roompali.vercel.app/api/roles/<rolId>`
 - Example: `https://backend-roompali.vercel.app/api/roles/5f6dfe0f36dd7629181ff1d1`
-> Response
+  > Response
+
 ```
 {
     "message": "Rol listed",
@@ -256,9 +281,11 @@ Roompali API is a support structure that aims to provide the routes, data and ot
 ```
 
 ### POST Rol
+
 - URL: `http://localhost:3500/api/roles/<rolId>`
 - API Roompali: `https://backend-roompali.vercel.app/api/roles/<rolId>`
-> Request
+  > Request
+
 ```
 {
     "user_data" : "5f6df5cab628f31a0ce367bb",
@@ -267,10 +294,12 @@ Roompali API is a support structure that aims to provide the routes, data and ot
     "contact_email": "empresajramirez@juanr.com",
     "user_picture": "https://images.freeimages.com/images/large-previews/28f/man-with-laptop-1238347.jpg",
     "owner": false,
-    "whatsapp": "3117897456"   
+    "whatsapp": "3117897456"
 }
 ```
+
 > Response
+
 ```
 {
     "message": "Rol created",
@@ -289,17 +318,22 @@ Roompali API is a support structure that aims to provide the routes, data and ot
 }
 
 ```
+
 ### PATCH Rol
+
 - URL: `http://localhost:3500/api/roles/<rolId>`
 - API Roompali: `https://backend-roompali.vercel.app/api/roles/<roldId>`
 - Example: `https://backend-roompali.vercel.app/api/roles/5f6e00dc8a4b5b136c0cb776`
-> Request
+  > Request
+
 ```
 {
     "contact_email": "ramirezsociety@gmail.com"
 }
 ```
+
 > Response
+
 ```
 {
     "message": "Rol updated",
@@ -317,48 +351,60 @@ Roompali API is a support structure that aims to provide the routes, data and ot
     }
 }
 ```
+
 ### DELETE Rol
+
 - URL: `http://localhost:3500/api/roles/<rolId>`
 - API Roompali: `https://backend-roompali.vercel.app/api/roles/<rolId>`
 - Example: `https://backend-roompali.vercel.app/api/roles/5f6dfe0f36dd7629181ff1d1`
-> Response
+  > Response
+
 ```
 {
     "message": "Rol 5f6dfe0f36dd7629181ff1d1 was deleted"
 }
 ```
+
 ### Rooms
 
 ### GET Rooms
+
 - URL: `http://localhost:3500/api/rooms`
 - API Roompali: `https://backend-roompali.vercel.app/api/rooms`
-> Response
+  > Response
+
 ```
 {
     "message": "Rooms listed",
     "total": 1,
     "body": [
-        {
-            "secondary_image": [
+                {
+            "secondary_images": [
                 "https://images.pexels.com/photos/2082087/pexels-photo-2082087.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
                 "https://images.pexels.com/photos/2062431/pexels-photo-2062431.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
             ],
-            "furniture": [
-                "cama",
-                "mesa"
-            ],
-            "available": true,
-            "wifi": true,
+            "available": false,
+            "bed": false,
+            "desk": false,
+            "closet": false,
+            "couch": false,
+            "chair": false,
+            "kitchen": false,
+            "visits": false,
+            "wifi": false,
+            "parking": false,
+            "washing_machine": false,
+            "television": false,
+            "heating": false,
             "private_bathroom": false,
-            "cleaning": false,
-            "closet": true,
-            "_id": "5f6e14e1a5f7b53e3c305685",
+            "gymnasium": false,
+            "air_conditioner": false,
+            "_id": "5f7130863a4e422cf052152a",
             "room_name": "El departamento de Juan",
             "main_image": "https://images.pexels.com/photos/2462015/pexels-photo-2462015.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
             "city": "medellin",
             "address": "Cra. 43 #65-9, Medellín, Antioquia",
             "square_meters": 30,
-            "price": 300000,
             "room_description": "Alquilo habitación con baño compartido, la habitación cuenta con armario, buena iluminación y ventilación",
             "owner": {
                 "favorite_rooms": [],
@@ -372,6 +418,7 @@ Roompali API is a support structure that aims to provide the routes, data and ot
                 "whatsapp": "+573117897456",
                 "__v": 0
             },
+            "price": 270000,
             "__v": 0
         }
     ]
@@ -379,34 +426,42 @@ Roompali API is a support structure that aims to provide the routes, data and ot
 ```
 
 ### GET One Room
+
 - URL: `http://localhost:3500/api/rooms/<roomId>`
 - API Roompali: `https://backend-roompali.vercel.app/api/rooms/<roomId>`
-- Example: `https://backend-roompali.vercel.app/api/rooms/5f6e14e1a5f7b53e3c305685`
-> Response
+- Example: `https://backend-roompali.vercel.app/api/rooms/5f7130863a4e422cf052152a`
+  > Response
+
 ```
 {
     "message": "Room listed",
     "body": {
-        "secondary_image": [
+        "secondary_images": [
             "https://images.pexels.com/photos/2082087/pexels-photo-2082087.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
             "https://images.pexels.com/photos/2062431/pexels-photo-2062431.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
         ],
-        "furniture": [
-            "cama",
-            "mesa"
-        ],
-        "available": true,
-        "wifi": true,
+        "available": false,
+        "bed": false,
+        "desk": false,
+        "closet": false,
+        "couch": false,
+        "chair": false,
+        "kitchen": false,
+        "visits": false,
+        "wifi": false,
+        "parking": false,
+        "washing_machine": false,
+        "television": false,
+        "heating": false,
         "private_bathroom": false,
-        "cleaning": false,
-        "closet": true,
-        "_id": "5f6e14e1a5f7b53e3c305685",
+        "gymnasium": false,
+        "air_conditioner": false,
+        "_id": "5f7130863a4e422cf052152a",
         "room_name": "El departamento de Juan",
         "main_image": "https://images.pexels.com/photos/2462015/pexels-photo-2462015.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
         "city": "medellin",
         "address": "Cra. 43 #65-9, Medellín, Antioquia",
         "square_meters": 30,
-        "price": 300000,
         "room_description": "Alquilo habitación con baño compartido, la habitación cuenta con armario, buena iluminación y ventilación",
         "owner": {
             "favorite_rooms": [],
@@ -420,16 +475,19 @@ Roompali API is a support structure that aims to provide the routes, data and ot
             "whatsapp": "+573117897456",
             "__v": 0
         },
+        "price": 270000,
         "__v": 0
     }
 }
 ```
 
 ### GET Room By City
+
 - URL: `http://localhost:3500/api/rooms-search?city=<cityName>`
 - API Roompali: `https://backend-roompali.vercel.app/api/rooms-search?city=<cityName>`
 - Example: `https://backend-roompali.vercel.app/api/rooms-search?city=Medell%C3%ADn`
-> Response
+  > Response
+
 ```
 {
     "message": "Rooms finded",
@@ -476,132 +534,153 @@ Roompali API is a support structure that aims to provide the routes, data and ot
 ```
 
 ### POST Room
+
 - URL: `http://localhost:3500/api/rooms`
 - API Roompali: `https://backend-roompali.vercel.app/api/rooms`
-> Request
+  > Request
+
 ```
 {
     "room_name": "El departamento de Juan",
     "main_image": "https://images.pexels.com/photos/2462015/pexels-photo-2462015.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-    "secondary_image": [
+    "secondary_images": [
         "https://images.pexels.com/photos/2082087/pexels-photo-2082087.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
         "https://images.pexels.com/photos/2062431/pexels-photo-2062431.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
     ],
     "city": "Medellín",
     "address": "Cra. 43 #65-9, Medellín, Antioquia",
     "square_meters": 30,
-    "furniture": [
-        "cama",
-        "mesa"
-    ],
-    "price": 300000,
     "available": true,
-    "wifi": true ,
-    "private_bathroom": false,
-    "cleaning": false,
-    "closet": true,
     "room_description": "Alquilo habitación con baño compartido, la habitación cuenta con armario, buena iluminación y ventilación",
-    "owner": "5f6e00dc8a4b5b136c0cb776"
+    "price": 300000,
+    "userId": "5f6df5cab628f31a0ce367bb"
 }
 ```
+
 > Response
+
 ```
 {
     "message": "Room created",
     "body": {
-        "secondary_image": [
+        "secondary_images": [
             "https://images.pexels.com/photos/2082087/pexels-photo-2082087.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
             "https://images.pexels.com/photos/2062431/pexels-photo-2062431.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
         ],
-        "furniture": [
-            "cama",
-            "mesa"
-        ],
         "available": true,
-        "wifi": true,
+        "bed": false,
+        "desk": false,
+        "closet": false,
+        "couch": false,
+        "chair": false,
+        "kitchen": false,
+        "visits": false,
+        "wifi": false,
+        "parking": false,
+        "washing_machine": false,
+        "television": false,
+        "heating": false,
         "private_bathroom": false,
-        "cleaning": false,
-        "closet": true,
-        "_id": "5f6e14e1a5f7b53e3c305685",
+        "gymnasium": false,
+        "air_conditioner": false,
+        "_id": "5f71379f5d9556168804fafb",
         "room_name": "El departamento de Juan",
         "main_image": "https://images.pexels.com/photos/2462015/pexels-photo-2462015.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
         "city": "medellin",
         "address": "Cra. 43 #65-9, Medellín, Antioquia",
         "square_meters": 30,
-        "price": 300000,
         "room_description": "Alquilo habitación con baño compartido, la habitación cuenta con armario, buena iluminación y ventilación",
         "owner": "5f6e00dc8a4b5b136c0cb776",
+        "price": 300000,
         "__v": 0
     }
 }
 ```
 
 ### PATCH Room
+
 - URL: `http://localhost:3500/api/rooms/<roomId>`
 - API Roompali: `https://backend-roompali.vercel.app/api/rooms/<roomId>`
-- Example: `https://backend-roompali.vercel.app/api/rooms/5f6e14e1a5f7b53e3c305685`
-> Request
+- Example: `https://backend-roompali.vercel.app/api/rooms/5f7130863a4e422cf052152a`
+  > Request
+
 ```
 {
     "available": false,
     "price": 270000
 }
 ```
+
 > Response
+
 ```
 {
-    "message": "Room 5f6e14e1a5f7b53e3c305685 updated",
+    "message": "Room 5f7130863a4e422cf052152a updated",
     "body": {
-        "secondary_image": [
+        "secondary_images": [
             "https://images.pexels.com/photos/2082087/pexels-photo-2082087.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
             "https://images.pexels.com/photos/2062431/pexels-photo-2062431.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
         ],
-        "furniture": [
-            "cama",
-            "mesa"
-        ],
         "available": false,
-        "wifi": true,
+        "bed": false,
+        "desk": false,
+        "closet": false,
+        "couch": false,
+        "chair": false,
+        "kitchen": false,
+        "visits": false,
+        "wifi": false,
+        "parking": false,
+        "washing_machine": false,
+        "television": false,
+        "heating": false,
         "private_bathroom": false,
-        "cleaning": false,
-        "closet": true,
-        "_id": "5f6e14e1a5f7b53e3c305685",
+        "gymnasium": false,
+        "air_conditioner": false,
+        "_id": "5f7130863a4e422cf052152a",
         "room_name": "El departamento de Juan",
         "main_image": "https://images.pexels.com/photos/2462015/pexels-photo-2462015.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
         "city": "medellin",
         "address": "Cra. 43 #65-9, Medellín, Antioquia",
         "square_meters": 30,
-        "price": 270000,
         "room_description": "Alquilo habitación con baño compartido, la habitación cuenta con armario, buena iluminación y ventilación",
         "owner": "5f6e00dc8a4b5b136c0cb776",
+        "price": 270000,
         "__v": 0
     }
 }
 ```
 
 ### Delete Room
+
 - URL: `http://localhost:3500/api/rooms/<roomId>`
 - API Roompali: `https://backend-roompali.vercel.app/api/rooms/<roomId>`
 - Example: `https://backend-roompali.vercel.app/api/rooms/5f6e14e1a5f7b53e3c305685`
-> Response
+  > Response
+
 ```
 {
     "message": "Room 5f6e14e1a5f7b53e3c305685 deleted"
 }
 ```
+
 ### Favorite-Rooms
 
 ### POST Add Favorite Room
+
 - URL: `http://localhost:3500/api/favorite-rooms/add`
 - API Roompali: `https://backend-roompali.vercel.app/api/favorite-rooms/add`
-> Request
+  > Request
+
 ```
 {
     "rolId": "5f6d3fc940e27409105383c0",
     "roomId": "5f6e18a640fc1a286c84456c"
 }
 ```
+
 > Response
+
 ```
 {
     "message": "New room added to favorites_rooms section",
@@ -623,16 +702,20 @@ Roompali API is a support structure that aims to provide the routes, data and ot
 ```
 
 ### POST Remove Favorite Room
+
 - URL: `http://localhost:3500/api/favorite-rooms/remove`
 - API Roompali: `https://backend-roompali.vercel.app/api/favorite-rooms/remove`
-> Request
+  > Request
+
 ```
 {
     "rolId": "5f6d3fc940e27409105383c0",
     "roomId": "5f6e18a640fc1a286c84456c"
 }
 ```
+
 > Response
+
 ```
 {
     "message": "Favorite room 5f6d3fc940e27409105383c0 removed",
@@ -654,15 +737,19 @@ Roompali API is a support structure that aims to provide the routes, data and ot
 ### Images
 
 ### POST Image
+
 - URL: `http://localhost:3500/api/images`
 - API Roompali: `https://backend-roompali.vercel.app/api/images`
 - Formats: `.png` and `.jpeg`
-> Request
+  > Request
+
 ```
 Key: 'image'
 Value: 'test-image.png'
 ```
+
 > Response
+
 ```
 {
     "message": "Image created",
@@ -671,17 +758,21 @@ Value: 'test-image.png'
 ```
 
 ### POST Multi Images
+
 - URL: `http://localhost:3500/api/images/multi`
 - API Roompali: `https://backend-roompali.vercel.app/api/images/multi`
 - Formats: `.png` and `.jpeg`
-> Request
+  > Request
+
 ```
 Key: 'image'
 Value: 'test-image.png'
 Key: 'image'
 Value: 'test-image.png'
 ```
+
 > Response
+
 ```
 {
     "message": "Images created",
@@ -693,14 +784,16 @@ Value: 'test-image.png'
 ```
 
 ## More Information
-|Name                        |Link|
-|:---------------------------|:----------------------------------------------------------------------------|
-|Doumentation                |https://www.notion.so/Roompali-Documentation-e3e63a0f62b4469db1b509a355c7a483|
-|Frontend Repository         |https://github.com/Cohort-4-Team-Ana-1/Frontend-Roompali                     |
-|API Backend                 |https://backend-roompali.vercel.app                                          |
-|APP Frontend                |APP Frontend                                                                 |
+
+| Name                | Link                                                                          |
+| :------------------ | :---------------------------------------------------------------------------- |
+| Doumentation        | https://www.notion.so/Roompali-Documentation-e3e63a0f62b4469db1b509a355c7a483 |
+| Frontend Repository | https://github.com/Cohort-4-Team-Ana-1/Frontend-Roompali                      |
+| API Backend         | https://backend-roompali.vercel.app                                           |
+| APP Frontend        | APP Frontend                                                                  |
 
 ## Team Members
+
 - [Johan Suarez (JohanSuarezQ)](https://github.com/JohanSuarezQ)
 - [Adrián Gutierrez (AdrianGutiR)](https://github.com/AdrianGutiR)
 - [Ricardo Aragón (Demianzx)](https://github.com/Demianzx)
@@ -709,6 +802,5 @@ Value: 'test-image.png'
 - [Francisco Suarez (Ulzahk)](https://github.com/Ulzahk)
 
 ## License
-MIT License 
 
-
+MIT License

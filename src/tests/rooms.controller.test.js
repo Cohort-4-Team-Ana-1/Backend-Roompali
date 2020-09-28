@@ -43,11 +43,11 @@ describe('Controller - Rooms', () => {
 
   describe('When createRoom function is called', async () => {
     it('Should call create function', async () => {
-      await roomsController.createRoom(roomMockAttributes)
+      await roomsController.createRoom(roomIdTest, roomMockAttributes)
       assert.strictEqual(roomsControllerMock.createRoomStub.called, true)
     })
     it('Should return the new room\'s data', async () => {
-      const newRoom = await roomsController.createRoom(roomMockAttributes)
+      const newRoom = await roomsController.createRoom(roomIdTest, roomMockAttributes)
       assert.deepStrictEqual(newRoom, roomsMock[1])
     })
   })
