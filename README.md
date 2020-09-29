@@ -783,4 +783,4 @@ Value: 'test-image.png'
 
 ## License
 
-MIT License
+[MIT License](https://github.com/Cohort-4-Team-Ana-1/Backend-Roompali/blob/development/LICENSE)
