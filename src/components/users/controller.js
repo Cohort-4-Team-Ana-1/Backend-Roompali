@@ -18,7 +18,7 @@ const readUserByEmail = (userEmail) => {
  * Bring one user record
  */
 const readOneUser = (userId) => {
-  const user = Users.findById(userId)
+  const user = Users.findById(userId).populate('favorite_rooms')
   return user
 }
 

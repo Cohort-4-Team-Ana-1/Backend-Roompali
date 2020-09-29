@@ -24,8 +24,8 @@ describe('Favorite Rooms - Controller', () => {
 
   describe('When readOneRol is called', async () => {
     it('Should call findById function', async () => {
-      await favoriteRoomsController.readOneRol()
-      assert.strictEqual(FavoriteRoomsControllerMock.readOneRolStub.called, true)
+      await favoriteRoomsController.readOneUser()
+      assert.strictEqual(FavoriteRoomsControllerMock.readOneUserStub.called, true)
     })
   })
 })

@@ -80,8 +80,9 @@ Roompali API is a support structure that aims to provide the routes, data and ot
     "message": "Users listed",
     "total": 2,
     "body": [
-        {
+        {  
         "_id": "5f6ab22c32458f354459002c",
+        "favorite_rooms": [],
         "username": "Maria Rodriguez",
         "password": "$2b$10$LbAT2JNeti.HJhzkz9bGzuNmpY3sG0P1sLeqdPre.J27rlZ/lzGCC",
         "email": "maria-rodriguez@mail.com",
@@ -89,6 +90,7 @@ Roompali API is a support structure that aims to provide the routes, data and ot
         },
         {
         "_id": "5f6ab4987a9b843cd81c1a5c",
+        "favorite_rooms": [],
         "username": "Pedro Martinez",
         "password": "$2b$10$BJHAKP6QhMP5IdVzIq5eJ.UZjjxwHGvCZs29L5F9DFFe0wVH4Ml96",
         "email": "pedrom@mail.com",
@@ -110,6 +112,7 @@ Roompali API is a support structure that aims to provide the routes, data and ot
     "message": "User listed",
     "body": {
         "_id": "5f6ab22c32458f354459002c",
+        "favorite_rooms": [],
         "username": "Maria Rodriguez",
         "password": "$2b$10$LbAT2JNeti.HJhzkz9bGzuNmpY3sG0P1sLeqdPre.J27rlZ/lzGCC",
         "email": "maria-rodriguez@mail.com",
@@ -126,6 +129,7 @@ Roompali API is a support structure that aims to provide the routes, data and ot
 
 ```
 {
+    "favorite_rooms": [],
     "username":"Juan Ramirez",
     "password":"12345*",
     "email":"juanr@gmail.com"
@@ -139,6 +143,7 @@ Roompali API is a support structure that aims to provide the routes, data and ot
     "message": "User created",
     "body": {
         "_id": "5f6df5cab628f31a0ce367bb",
+        "favorite_rooms": [],
         "username": "Juan Ramirez",
         "password": "$2b$10$rW3/oGLChdHV3a22mvp36eVyB5VmmTFFS7l5I0ADlBMhKc3tszJbG",
         "email": "juanr@gmail.com",
@@ -167,6 +172,7 @@ Roompali API is a support structure that aims to provide the routes, data and ot
     "message": "User updated",
     "body": {
         "_id": "5f6ab22c32458f354459002c",
+        "favorite_rooms": [],
         "username": "Maria Rodriguez",
         "password": "$2b$10$tRBMRwnaFKgIbolg2yytBOvs.fWWwLoqsT2wIs8LFtReiAKjJIY/K",
         "email": "maria-rodriguez@mail.com",
@@ -228,7 +234,6 @@ Roompali API is a support structure that aims to provide the routes, data and ot
     "total": 2,
     "body": [
         {
-            "favorite_rooms": [],
             "owner": true,
             "_id": "5f6d3fc940e27409105383c0",
             "user_data": "5f6ab22c32458f354459002c",
@@ -240,7 +245,6 @@ Roompali API is a support structure that aims to provide the routes, data and ot
             "__v": 0
         },
         {
-            "favorite_rooms": [],
             "owner": false,
             "_id": "5f6dfe0f36dd7629181ff1d1",
             "user_data": "5f6ab22c32458f354459002c",
@@ -266,7 +270,6 @@ Roompali API is a support structure that aims to provide the routes, data and ot
 {
     "message": "Rol listed",
     "body": {
-        "favorite_rooms": [],
         "owner": false,
         "_id": "5f6dfe0f36dd7629181ff1d1",
         "user_data": "5f6df5cab628f31a0ce367bb",
@@ -304,7 +307,6 @@ Roompali API is a support structure that aims to provide the routes, data and ot
 {
     "message": "Rol created",
     "body": {
-        "favorite_rooms": [],
         "owner": false,
         "_id": "5f6e00dc8a4b5b136c0cb776",
         "user_data": "5f6df5cab628f31a0ce367bb",
@@ -338,7 +340,6 @@ Roompali API is a support structure that aims to provide the routes, data and ot
 {
     "message": "Rol updated",
     "body": {
-        "favorite_rooms": [],
         "owner": false,
         "_id": "5f6e00dc8a4b5b136c0cb776",
         "user_data": "5f6df5cab628f31a0ce367bb",
@@ -407,7 +408,6 @@ Roompali API is a support structure that aims to provide the routes, data and ot
             "square_meters": 30,
             "room_description": "Alquilo habitación con baño compartido, la habitación cuenta con armario, buena iluminación y ventilación",
             "owner": {
-                "favorite_rooms": [],
                 "owner": false,
                 "_id": "5f6e00dc8a4b5b136c0cb776",
                 "user_data": "5f6df5cab628f31a0ce367bb",
@@ -464,7 +464,6 @@ Roompali API is a support structure that aims to provide the routes, data and ot
         "square_meters": 30,
         "room_description": "Alquilo habitación con baño compartido, la habitación cuenta con armario, buena iluminación y ventilación",
         "owner": {
-            "favorite_rooms": [],
             "owner": false,
             "_id": "5f6e00dc8a4b5b136c0cb776",
             "user_data": "5f6df5cab628f31a0ce367bb",
@@ -516,7 +515,6 @@ Roompali API is a support structure that aims to provide the routes, data and ot
             "price": 300000,
             "room_description": "Alquilo habitación con baño compartido, la habitación cuenta con armario, buena iluminación y ventilación",
             "owner": {
-                "favorite_rooms": [],
                 "owner": false,
                 "_id": "5f6e00dc8a4b5b136c0cb776",
                 "user_data": "5f6df5cab628f31a0ce367bb",
@@ -674,8 +672,8 @@ Roompali API is a support structure that aims to provide the routes, data and ot
 
 ```
 {
-    "rolId": "5f6d3fc940e27409105383c0",
-    "roomId": "5f6e18a640fc1a286c84456c"
+    "userId": "5f6ab4987a9b843cd81c1a5c",
+    "roomId": "5f7200f824471e4eacf20656"
 }
 ```
 
@@ -684,20 +682,11 @@ Roompali API is a support structure that aims to provide the routes, data and ot
 ```
 {
     "message": "New room added to favorites_rooms section",
-    "body": {
-        "favorite_rooms": [
-            "5f6e18a640fc1a286c84456c"
-        ],
-        "owner": true,
-        "_id": "5f6d3fc940e27409105383c0",
-        "user_data": "5f6ab22c32458f354459002c",
-        "first_name": "Pedro",
-        "last_name": "Rodriguez",
-        "contact_email": "pedror@companypr.com",
-        "user_picture": "https://images.freeimages.com/images/large-previews/253/homeless-1437118.jpg",
-        "whatsapp": "+573054678124",
-        "__v": 0
-    }
+    "userId": "5f6ab4987a9b843cd81c1a5c",
+    "user": "Maria Rodriguez",
+    "favorite_rooms": [
+        "5f7200f824471e4eacf20656"
+    ]
 }
 ```
 
@@ -709,8 +698,8 @@ Roompali API is a support structure that aims to provide the routes, data and ot
 
 ```
 {
-    "rolId": "5f6d3fc940e27409105383c0",
-    "roomId": "5f6e18a640fc1a286c84456c"
+    "userId": "5f6ab4987a9b843cd81c1a5c",
+    "roomId": "5f7200f824471e4eacf20656"
 }
 ```
 
@@ -718,19 +707,10 @@ Roompali API is a support structure that aims to provide the routes, data and ot
 
 ```
 {
-    "message": "Favorite room 5f6d3fc940e27409105383c0 removed",
-    "body": {
-        "favorite_rooms": [],
-        "owner": true,
-        "_id": "5f6d3fc940e27409105383c0",
-        "user_data": "5f6ab22c32458f354459002c",
-        "first_name": "Pedro",
-        "last_name": "Rodriguez",
-        "contact_email": "pedror@companypr.com",
-        "user_picture": "https://images.freeimages.com/images/large-previews/253/homeless-1437118.jpg",
-        "whatsapp": "+573054678124",
-        "__v": 0
-    }
+    "message": "Favorite room 5f6ab4987a9b843cd81c1a5c removed",
+    "userId": "5f6ab4987a9b843cd81c1a5c",
+    "user": "Maria Rodriguez",
+    "favorite_rooms": []
 }
 ```
 

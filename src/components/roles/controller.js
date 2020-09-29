@@ -26,7 +26,6 @@ const createRol = async (rol) => {
     last_name: rol.last_name,
     contact_email: rol.contact_email.toLowerCase(),
     user_picture: rol.user_picture,
-    favorite_rooms: rol.favorite_rooms,
     owner: rol.owner,
     whatsapp: rol.whatsapp === undefined ? rol.whatsapp : '+57' + rol.whatsapp
   }
@@ -44,7 +43,6 @@ const updateRol = async (rolId, rol) => {
     last_name: rol.last_name,
     contact_email: rol.contact_email === undefined ? rol.contact_email : rol.contact_email.toLowerCase(),
     user_picture: rol.user_picture,
-    favorite_rooms: rol.favorite_rooms,
     owner: rol.owner,
     whatsapp: rol.whatsapp === undefined ? rol.whatsapp : '+57' + rol.whatsapp
   }
