@@ -42,7 +42,7 @@ const favoriteRoomsApi = (app) => {
       await favoriteRoomsController.deleteOneFavoriteRoom(userId, roomId)
       const user = await favoriteRoomsController.readOneUser(userId)
       res.status(200).json({
-        message: `Favorite room ${userId} removed`,
+        message: `Favorite room ${roomId} removed`,
         userId: user._id,
         user: user.username,
         favorite_rooms: user.favorite_rooms

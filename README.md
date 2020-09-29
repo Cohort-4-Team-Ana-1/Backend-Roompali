@@ -707,7 +707,7 @@ Roompali API is a support structure that aims to provide the routes, data and ot
 
 ```
 {
-    "message": "Favorite room 5f6ab4987a9b843cd81c1a5c removed",
+    "message": "Favorite room 5f720ed0afa65800077554f6 removed",
     "userId": "5f6ab4987a9b843cd81c1a5c",
     "user": "Maria Rodriguez",
     "favorite_rooms": []

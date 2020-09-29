@@ -8,7 +8,7 @@ const Roles = new Schema({
   contact_email: { type: String, required: true},
   whatsapp: { type: String, required: true },
   user_picture: { type: String, required: true },
-  owner: { type: Boolean, default: false }
+  owner: { type: Boolean, default: true }
 })
 
 module.exports = mongoose.model('Roles', Roles)
