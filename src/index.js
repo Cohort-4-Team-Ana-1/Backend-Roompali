@@ -1,5 +1,6 @@
 const express = require('express')
 const database = require('./database')
+const debug = require('debug')('app:server')
 const cors = require('cors')
 const { config } = require('./config')
 const usersApi = require('./components/users/routes')
@@ -33,6 +34,6 @@ app.get('/', (req, res) => {
 })
 
 // Server
-app.listen(config.port, () => {
-  console.log(`Server listening at http://localhost:${config.port}`)
+const server = app.listen(config.port, () => {
+  debug(`Server listening at http://localhost:${server.address().port}`)
 })

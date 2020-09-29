@@ -1,44 +1,43 @@
-const { usersMock, usersIdTest, userEmailTest } = require("./users");
-const sinon = require("sinon");
-const { createUser } = require("../../components/users/controller");
+const { usersMock, usersIdTest, userEmailTest } = require('./users')
+const sinon = require('sinon')
 
-const readUsersStub = sinon.stub();
-const readOneUserStub = sinon.stub();
-const createUserStub = sinon.stub();
-const updateUserStub = sinon.stub();
-const deleteUserStub = sinon.stub();
-const readUserByEmailStub = sinon.stub();
+const readUsersStub = sinon.stub()
+const readOneUserStub = sinon.stub()
+const createUserStub = sinon.stub()
+const updateUserStub = sinon.stub()
+const deleteUserStub = sinon.stub()
+const readUserByEmailStub = sinon.stub()
 
-readUsersStub.resolves(usersMock);
-readOneUserStub.withArgs(`${usersIdTest}`).resolves(usersMock[0]);
-createUserStub.resolves(usersMock[0]);
-updateUserStub.resolves({ nModified: 1 });
-deleteUserStub.resolves({ deletedCount: 1 });
-readUserByEmailStub.resolves(usersMock[0]);
+readUsersStub.resolves(usersMock)
+readOneUserStub.withArgs(usersIdTest).resolves(usersMock[0])
+createUserStub.resolves(usersMock[0])
+updateUserStub.resolves({ nModified: 1 })
+deleteUserStub.resolves({ deletedCount: 1 })
+readUserByEmailStub.withArgs(userEmailTest).resolves(usersMock[0])
 
 const find = () => {
-  return readUsersStub();
-};
+  return readUsersStub()
+}
 
 const findById = (userId) => {
-  return readOneUserStub(userId);
-};
+  return readOneUserStub(userId)
+}
 
 const create = (user) => {
-  return createUserStub(user);
-};
+  return createUserStub(user)
+}
 
 const findByIdAndUpdate = () => {
-  return updateUserStub();
-};
+  return updateUserStub()
+}
 
 const findByIdAndDelete = () => {
-  return deleteUserStub();
-};
+  return deleteUserStub()
+}
 
 const findOne = (userEmail) => {
-  return readUserByEmailStub(userEmail);
-};
+  return readUserByEmailStub(userEmail)
+}
 
 module.exports = {
   find,
@@ -52,5 +51,5 @@ module.exports = {
   createUserStub,
   updateUserStub,
   deleteUserStub,
-  readUserByEmailStub,
-};
+  readUserByEmailStub
+}

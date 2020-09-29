@@ -28,7 +28,7 @@ const createRol = async (rol) => {
     user_picture: rol.user_picture,
     favorite_rooms: rol.favorite_rooms,
     owner: rol.owner,
-    whatsapp: rol.whatsapp === undefined ? rol.whatsapp : '+57' + rol.whatsapp 
+    whatsapp: rol.whatsapp === undefined ? rol.whatsapp : '+57' + rol.whatsapp
   }
   const createdRol = await Roles.create(rolData)
   return createdRol
@@ -46,7 +46,7 @@ const updateRol = async (rolId, rol) => {
     user_picture: rol.user_picture,
     favorite_rooms: rol.favorite_rooms,
     owner: rol.owner,
-    whatsapp: rol.whatsapp === undefined ? rol.whatsapp : '+57' + rol.whatsapp 
+    whatsapp: rol.whatsapp === undefined ? rol.whatsapp : '+57' + rol.whatsapp
   }
   await Roles.findByIdAndUpdate(
     rolId,
