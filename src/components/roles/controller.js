@@ -12,7 +12,7 @@ const readRoles = async () => {
  * Bring one rol by id
  */
 const readOneRol = async (rolId) => {
-  const rol = await Roles.findById(rolId).populate('favorite_rooms')
+  const rol = await Roles.findById(rolId)
   return rol
 }
 
