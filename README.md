@@ -1,5 +1,5 @@
 <h1 align="center">
-    <img alt="Roompali API" src="https://image.flaticon.com/icons/png/512/36/36601.png" width="100">
+    <img alt="Roompali API" src="https://roompali-bucket-s3.s3-us-west-1.amazonaws.com/Roompali-logo-elegido.png" width="100">
   <br>Roompali API <br>
 </h1>
 <p align="center"><p>
@@ -52,7 +52,7 @@ Roompali API is a support structure that aims to provide the routes, data and ot
 
 ## NYC Report
 
-![Image](https://roompali-bucket-s3.s3-us-west-1.amazonaws.com/report-example.png)
+![Image](https://roompali-bucket-s3.s3-us-west-1.amazonaws.com/Report.png)
 
 ## Steps to Collaborate
 

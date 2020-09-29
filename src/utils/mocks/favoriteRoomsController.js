@@ -1,5 +1,5 @@
 const sinon = require('sinon')
-const { addFavoriteRoomsRolMock, removeFavoriteRoomsRolMock} = require('./favoriteRooms')
+const { addFavoriteRoomsRolMock, removeFavoriteRoomsRolMock } = require('./favoriteRooms')
 
 const findByIdAndUpdateStub = sinon.stub()
 const findFavoriteRoomByIdStub = sinon.stub()
@@ -10,22 +10,22 @@ findFavoriteRoomByIdStub.resolves(undefined)
 readOneRolStub.resolves(removeFavoriteRoomsRolMock)
 
 const findByIdAndUpdate = async () => {
-    return findByIdAndUpdateStub()
+  return findByIdAndUpdateStub()
 }
 
 const find = async () => {
-    return findFavoriteRoomByIdStub()
+  return findFavoriteRoomByIdStub()
 }
 
 const findById = async () => {
-    return readOneRolStub()
+  return readOneRolStub()
 }
 
 module.exports = {
-    findByIdAndUpdate,
-    find,
-    findById,
-    findByIdAndUpdateStub,
-    findFavoriteRoomByIdStub,
-    readOneRolStub
+  findByIdAndUpdate,
+  find,
+  findById,
+  findByIdAndUpdateStub,
+  findFavoriteRoomByIdStub,
+  readOneRolStub
 }

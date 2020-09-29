@@ -12,7 +12,7 @@ const readRooms = async () => {
  * Brings one room record with all its attributes using its _id atribute as guide.
  */
 const readOneRoom = async roomId => {
-  const room =  await Rooms.findById(roomId).populate('owner')
+  const room = await Rooms.findById(roomId).populate('owner')
   return room
 }
 
@@ -45,7 +45,7 @@ const createRoom = async (rolId, room) => {
     heating: room.heating,
     gymnasium: room.gymnasium,
     private_bathroom: room.private_bathroom,
-    air_conditioner: room.air_conditioner,
+    air_conditioner: room.air_conditioner
   }
   const newRoom = await Rooms.create(roomData)
   return newRoom
@@ -80,7 +80,7 @@ const updateRoom = async (roomId, room) => {
     heating: room.heating,
     gymnasium: room.gymnasium,
     private_bathroom: room.private_bathroom,
-    air_conditioner: room.air_conditioner,
+    air_conditioner: room.air_conditioner
   }
 
   await Rooms.findByIdAndUpdate(
@@ -109,7 +109,6 @@ const searchRoomByCity = async city => {
   const rooms = await Rooms.find({ city: cityProccesed }).populate('owner')
   return rooms
 }
-
 
 module.exports = {
   readRooms,
