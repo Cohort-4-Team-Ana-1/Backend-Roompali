@@ -13,7 +13,9 @@
     <img src="https://img.shields.io/badge/NYC -80％-Green">
 </div>
 
-Roompali API is a support structure that aims to provide the routes, data and other means of connection to achieve the Roompali APP's functionality.
+<p align="center">Roompali API is a support structure that aims to provide the routes, data and other means of connection to achieve the Roompali APP's functionality.</p>
+
+---
 
 ## Table of Contents
 
@@ -769,8 +771,8 @@ Value: 'test-image.png'
 | :------------------ | :---------------------------------------------------------------------------- |
 | Doumentation        | https://www.notion.so/Roompali-Documentation-e3e63a0f62b4469db1b509a355c7a483 |
 | Frontend Repository | https://github.com/Cohort-4-Team-Ana-1/Frontend-Roompali                      |
-| API Backend         | https://backend-roompali.vercel.app                                           |
-| APP Frontend        | https://frontend-roompali.vercel.app/                                         |
+| Roompali API        | https://backend-roompali.vercel.app                                           |
+| Roompali APP        | https://frontend-roompali.vercel.app/                                         |
 
 ## Team Members
 
@@ -783,4 +785,4 @@ Value: 'test-image.png'
 
 ## License
 
-[MIT License](https://github.com/Cohort-4-Team-Ana-1/Backend-Roompali/blob/development/LICENSE)
+[MIT License](https://github.com/Cohort-4-Team-Ana-1/Backend-Roompali/blob/master/LICENSE)
