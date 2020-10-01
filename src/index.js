@@ -19,7 +19,7 @@ database.connection()
 
 // Body Parser
 app.use(express.json({ extended: true }))
-app.use(bodyParser.json({ limit: '50mb'}))
+app.use(bodyParser.json({ limit: '5mb'}))
 
 // Routes
 usersApi(app)
@@ -30,7 +30,7 @@ favoriteRoomsApi(app)
 
 app.get('/', (req, res) => {
   res.send(`
-  Server Status: [Online]
+  Server Status: [🟢 Online]
   
   For more information visit: https://github.com/Cohort-4-Team-Ana-1/Backend-Roompali`)
 })
