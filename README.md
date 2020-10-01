@@ -770,7 +770,7 @@ Value: 'test-image.png'
 | Doumentation        | https://www.notion.so/Roompali-Documentation-e3e63a0f62b4469db1b509a355c7a483 |
 | Frontend Repository | https://github.com/Cohort-4-Team-Ana-1/Frontend-Roompali                      |
 | API Backend         | https://backend-roompali.vercel.app                                           |
-| APP Frontend        | APP Frontend                                                                  |
+| APP Frontend        | https://frontend-roompali.vercel.app/                                         |
 
 ## Team Members
 
