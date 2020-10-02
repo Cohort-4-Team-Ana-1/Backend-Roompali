@@ -34,11 +34,11 @@ const readOneUser = async () => {
 }
 
 const createUser = async () => {
-  return Promise.resolve(userMock[0])
+  return Promise.resolve(usersMock[0])
 }
 
 const updateUser = async () => {
-  return Promise.resolve(userMock[1])
+  return Promise.resolve(usersMock[1])
 }
 
 const deleteUser = async () => {

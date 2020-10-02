@@ -9,8 +9,7 @@
     <img src="https://img.shields.io/badge/Express.js-4.17.1-lightgrey">
     <img src="https://img.shields.io/badge/MongoDB-4.0-Green">
     <img src="https://img.shields.io/badge/Passport-0.4.1-black">
-    <img src="https://img.shields.io/badge/Status-In progress-orange">
-    <img src="https://img.shields.io/badge/NYC -80％-Green">
+    <img src="https://img.shields.io/badge/NYC -75％-Green">
 </div>
 
 <p align="center">Roompali API is a support structure that aims to provide the routes, data and other means of connection to achieve the Roompali APP's functionality.</p>
@@ -39,6 +38,7 @@
     - [GET Rooms](#get-rooms)
     - [GET One Room](#get-one-room)
     - [GET Room By City](#get-room-by-city)
+    - [GET Rooms Quantity](#get-rooms-quantity)
     - [POST Room](#post-room)
     - [PATCH Room](#patch-room)
     - [DELETE Room](#delete-room)
@@ -527,6 +527,106 @@
                 "whatsapp": "+573117897456",
                 "__v": 0
             },
+            "__v": 0
+        }
+    ]
+}
+```
+
+### GET Rooms Quantity
+
+- URL: `http://localhost:3500/api/rooms/number/<roomQuantity>`
+- API Roompali: `https://backend-roompali.vercel.app/api/rooms/number/<roomQuantity>`
+- Example: `https://backend-roompali.vercel.app/api/rooms/number/2`
+> Response
+```
+{
+    "message": "2 Rooms listed",
+    "body": [
+        {
+            "secondary_images": [
+                "https://roompali-bucket-s3.s3-us-west-1.amazonaws.com/1-detalles-1601306251232.jpg",
+                "https://roompali-bucket-s3.s3-us-west-1.amazonaws.com/1-detalles-2-1601306251253.jpg"
+            ],
+            "available": true,
+            "bed": true,
+            "desk": true,
+            "closet": true,
+            "couch": false,
+            "chair": true,
+            "kitchen": true,
+            "visits": true,
+            "wifi": true,
+            "parking": false,
+            "washing_machine": false,
+            "television": false,
+            "heating": false,
+            "private_bathroom": false,
+            "gymnasium": false,
+            "air_conditioner": false,
+            "_id": "5f7200f824471e4eacf20656",
+            "room_name": "Habitación Estilo Utüane",
+            "main_image": "https://roompali-bucket-s3.s3-us-west-1.amazonaws.com/1-habitaci%C3%B3n-estilo-1601306251203.jpg",
+            "city": "leticia",
+            "address": "Calle 14 C 2A 11/19 Barrio La Sarita, Leticia 910008 Colombia",
+            "square_meters": 20,
+            "room_description": "La infraestructura está inspirada en la naturaleza y en las malocas propias del lugar, con estilo rústico sin olvidar la comodidad.",
+            "owner": {
+                "owner": true,
+                "_id": "5f72006e24471e4eacf20655",
+                "favorite_rooms": [],
+                "user_data": "5f72003b24471e4eacf20654",
+                "first_name": "Martin",
+                "last_name": "Gomez",
+                "contact_email": "mtgomez-society@gmail.com",
+                "user_picture": "https://roompali-bucket-s3.s3-us-west-1.amazonaws.com/1-martin-gomez-1601306251195.jpg",
+                "whatsapp": "+573154286759",
+                "__v": 0
+            },
+            "price": 800000,
+            "__v": 0
+        },
+        {
+            "secondary_images": [
+                "https://roompali-bucket-s3.s3.us-west-1.amazonaws.com/2-detalles1-1601421147448.jpg",
+                "https://roompali-bucket-s3.s3.us-west-1.amazonaws.com/2-detalles2-1601421147449.jpg"
+            ],
+            "available": true,
+            "bed": true,
+            "desk": false,
+            "closet": true,
+            "couch": false,
+            "chair": true,
+            "kitchen": true,
+            "visits": true,
+            "wifi": true,
+            "parking": false,
+            "washing_machine": false,
+            "television": true,
+            "heating": false,
+            "private_bathroom": true,
+            "gymnasium": false,
+            "air_conditioner": false,
+            "_id": "5f73c07753c80f00087cc863",
+            "room_name": "Habitación Casa de las Palmas",
+            "main_image": "https://roompali-bucket-s3.s3.us-west-1.amazonaws.com/2-main-1601421147453.jpg",
+            "city": "leticia",
+            "address": "Carrera 11 #13-110, Leticia 910001 Colombia",
+            "square_meters": 30,
+            "room_description": "Un lugar cómodo y ameno desde el cual podrás planear una amplia variedad de tours que podrás conocer y personalizar con nosotros.",
+            "owner": {
+                "owner": true,
+                "_id": "5f72006e24471e4eacf20655",
+                "favorite_rooms": [],
+                "user_data": "5f72003b24471e4eacf20654",
+                "first_name": "Martin",
+                "last_name": "Gomez",
+                "contact_email": "mtgomez-society@gmail.com",
+                "user_picture": "https://roompali-bucket-s3.s3-us-west-1.amazonaws.com/1-martin-gomez-1601306251195.jpg",
+                "whatsapp": "+573154286759",
+                "__v": 0
+            },
+            "price": 900000,
             "__v": 0
         }
     ]
