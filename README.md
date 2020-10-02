@@ -113,11 +113,55 @@
 {
     "message": "User listed",
     "body": {
-        "_id": "5f6ab22c32458f354459002c",
-        "favorite_rooms": [],
+        "favorite_rooms": [
+            {
+                "secondary_images": [
+                    "https://roompali-bucket-s3.s3-us-west-1.amazonaws.com/1-detalles-1601306251232.jpg",
+                    "https://roompali-bucket-s3.s3-us-west-1.amazonaws.com/1-detalles-2-1601306251253.jpg"
+                ],
+                "available": true,
+                "bed": true,
+                "desk": true,
+                "closet": true,
+                "couch": false,
+                "chair": true,
+                "kitchen": true,
+                "visits": true,
+                "wifi": true,
+                "parking": false,
+                "washing_machine": false,
+                "television": false,
+                "heating": false,
+                "private_bathroom": false,
+                "gymnasium": false,
+                "air_conditioner": false,
+                "_id": "5f7200f824471e4eacf20656",
+                "room_name": "Habitación Estilo Utüane",
+                "main_image": "https://roompali-bucket-s3.s3-us-west-1.amazonaws.com/1-habitaci%C3%B3n-estilo-1601306251203.jpg",
+                "city": "leticia",
+                "address": "Calle 14 C 2A 11/19 Barrio La Sarita, Leticia 910008 Colombia",
+                "square_meters": 20,
+                "room_description": "La infraestructura está inspirada en la naturaleza y en las malocas propias del lugar, con estilo rústico sin olvidar la comodidad.",
+                "owner": {
+                    "owner": true,
+                    "_id": "5f72006e24471e4eacf20655",
+                    "favorite_rooms": [],
+                    "user_data": "5f72003b24471e4eacf20654",
+                    "first_name": "Martin",
+                    "last_name": "Gomez",
+                    "contact_email": "mtgomez-society@gmail.com",
+                    "user_picture": "https://roompali-bucket-s3.s3-us-west-1.amazonaws.com/1-martin-gomez-1601306251195.jpg",
+                    "whatsapp": "+573154286759",
+                    "__v": 0
+                },
+                "price": 800000,
+                "__v": 0
+            }
+        ],
+        "_id": "5f6ab4987a9b843cd81c1a5c",
         "username": "Maria Rodriguez",
-        "password": "$2b$10$LbAT2JNeti.HJhzkz9bGzuNmpY3sG0P1sLeqdPre.J27rlZ/lzGCC",
-        "email": "maria-rodriguez@mail.com",
+        "password": "$2b$10$BJHAKP6QhMP5IdVzIq5eJ.UZjjxwHGvCZs29L5F9DFFe0wVH4Ml96",
+        "email": "rodriguez@mail.com",
         "__v": 0
     }
 }
