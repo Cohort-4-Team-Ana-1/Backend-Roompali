@@ -24,20 +24,12 @@ describe('Controller - Rooms', () => {
       await roomsController.readRooms({})
       assert.strictEqual(roomsControllerMock.readRoomsStub.called, true)
     })
-    it('Should return a rooms array', async () => {
-      const rooms = await roomsController.readRooms({})
-      assert.deepStrictEqual(rooms, roomsMock)
-    })
   })
 
   describe('When readOneRoom function is called', async () => {
     it('Should call findById function', async () => {
       await roomsController.readOneRoom(roomIdTest)
       assert.strictEqual(roomsControllerMock.readOneRoomStub.called, true)
-    })
-    it('Should return the room\'s data', async () => {
-      const room = await roomsController.readOneRoom(roomIdTest)
-      assert.deepStrictEqual(room, roomsMock[0])
     })
   })
 

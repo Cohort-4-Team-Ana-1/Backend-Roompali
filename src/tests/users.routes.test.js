@@ -32,18 +32,10 @@ describe('Users - Routes', () => {
     it('Should respond with status 201', (done) => {
       request.post('/api/users').expect(201, done)
     })
-    it('Should respond with a content-type json', (done) => {
-      request.post('/api/users').expect('Content-type', /json/, done)
-    })
   })
   describe('PATCH /api/users/userId', () => {
     it('Should respond with status 200', (done) => {
       request.patch(`/api/users/${usersIdTest}`).expect(200, done)
-    })
-    it('Should respond with a content-type json', (done) => {
-      request
-        .patch(`/api/users/${usersIdTest}`)
-        .expect('Content-type', /json/, done)
     })
   })
   describe('DELETE /api/users/userId', () => {

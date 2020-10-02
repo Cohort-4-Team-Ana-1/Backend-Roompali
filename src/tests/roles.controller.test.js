@@ -37,4 +37,10 @@ describe('Roles - Controller', () => {
       assert.strictEqual(RolControllerMock.deleteRolStub.called, true)
     })
   })
+  describe('When searchRolByUserId is called', async () => {
+    it('Should call findOne Function', async () => {
+      await rolesController.searchRolByUserId(rolIdTest)
+      assert.strictEqual(RolControllerMock.searchRolByUserIdStub.called, true)
+    })
+  })
 })
