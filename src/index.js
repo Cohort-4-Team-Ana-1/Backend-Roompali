@@ -1,7 +1,7 @@
 const express = require('express')
 const database = require('./database')
 const debug = require('debug')('app:server')
-const bodyParser = require('body-parser');
+const bodyParser = require('body-parser')
 const cors = require('cors')
 const { config } = require('./config')
 const usersApi = require('./components/users/routes')
@@ -19,7 +19,7 @@ database.connection()
 
 // Body Parser
 app.use(express.json({ extended: true }))
-app.use(bodyParser.json({ limit: '5mb'}))
+app.use(bodyParser.json({ limit: '5mb' }))
 
 // Routes
 usersApi(app)

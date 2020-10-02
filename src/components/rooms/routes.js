@@ -101,6 +101,19 @@ const roomsApi = (app) => {
       next(error)
     }
   })
+
+  router.get('/number/:number', async (req, res, next) => {
+    try {
+      const numberRooms = parseInt(req.params.number)
+      const rooms = await roomsController.readNumberRooms(numberRooms)
+      res.status(200).json({
+        message: `${numberRooms} Rooms listed`,
+        body: rooms
+      })
+    } catch (error) {
+      next(error)
+    }
+  })
 }
 
 module.exports = roomsApi

@@ -110,11 +110,20 @@ const searchRoomByCity = async city => {
   return rooms
 }
 
+/**
+ * Brings a certain amount of room records depending on the number parameter
+ */
+const readNumberRooms = async (numberRooms) => {
+  const rooms = await Rooms.find().limit(numberRooms).populate('owner').exec()
+  return rooms
+}
+
 module.exports = {
   readRooms,
   readOneRoom,
   createRoom,
   updateRoom,
   deleteRoom,
-  searchRoomByCity
+  searchRoomByCity,
+  readNumberRooms
 }
