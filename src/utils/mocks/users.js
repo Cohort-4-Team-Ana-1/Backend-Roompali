@@ -46,7 +46,7 @@ const deleteUser = async () => {
 }
 
 const readUserByEmail = async () => {
-  return Promise.resolve(null)
+  return Promise.resolve(userEmailTest)
 }
 
 module.exports = {

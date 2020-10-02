@@ -66,6 +66,10 @@ const removeFavoriteRoomsRolMock = {
   __v: 0
 }
 
+const favoriteRoomsUserIdTest = '5f6ab4987a9b843cd81c1a5c'
+
+const favoriteRoomsRoomIdTest = '5f720ed0afa65800077554f6'
+
 const addOneFavoriteRoom = async () => {
   return Promise.resolve(addFavoriteRoomsRolMock)
 }
@@ -78,17 +82,19 @@ const deleteOneFavoriteRoom = async () => {
   return Promise.resolve()
 }
 
-const readOneRol = async () => {
+const readOneUser = async () => {
   return Promise.resolve(removeFavoriteRoomsRolMock)
 }
 
 module.exports = {
   addFavoriteRoomsRolMock,
   removeFavoriteRoomsRolMock,
+  favoriteRoomsUserIdTest,
+  favoriteRoomsRoomIdTest,
   FavoriteRoomsControllerMock: {
     addOneFavoriteRoom,
     findFavoriteRoomById,
     deleteOneFavoriteRoom,
-    readOneRol
+    readOneUser
   }
 }

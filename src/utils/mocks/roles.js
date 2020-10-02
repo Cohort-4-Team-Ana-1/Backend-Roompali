@@ -71,6 +71,11 @@ const deleteRol = async () => {
 
 const rolIdTest = '5f6d3fc940e27409105383c0'
 
+const searchRolByUserId = async () => {
+  return Promise.resolve(rolIdTest)
+}
+
+
 module.exports = {
   rolIdTest,
   rolMock,
@@ -80,6 +85,7 @@ module.exports = {
     readOneRol,
     createRol,
     updateRol,
-    deleteRol
+    deleteRol,
+    searchRolByUserId
   }
 }

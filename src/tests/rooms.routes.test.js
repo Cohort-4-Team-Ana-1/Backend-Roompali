@@ -1,17 +1,18 @@
 /* eslint-disable */
 const assert = require('assert')
 const proxyquire = require('proxyquire')
-
 const {
   roomsMock,
   roomIdTest,
   RoomsControllerMock
 } = require('../utils/mocks/rooms')
+const RolesControllerMock = require('../utils/mocks/roles')
 const testServer = require('../utils/testServer')
 
 describe('Rooms - Routes', () => {
   const router = proxyquire('../components/rooms/routes', {
-    './controller': RoomsControllerMock
+    './controller': RoomsControllerMock,
+    '../roles/controller': RolesControllerMock
   })
 
   const request = testServer(router)
@@ -65,10 +66,6 @@ describe('Rooms - Routes', () => {
   describe('POST /api/rooms ', () => {
     it('Should respond with status 201', (done) => {
       request.post('/api/rooms/').expect(201, done)
-    })
-
-    it('Should respond with a Content-type json', (done) => {
-      request.post('/api/rooms').expect('Content-type', /json/, done)
     })
   })
 
