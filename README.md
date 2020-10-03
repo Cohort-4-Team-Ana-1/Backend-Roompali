@@ -9,7 +9,7 @@
     <img src="https://img.shields.io/badge/Express.js-4.17.1-lightgrey">
     <img src="https://img.shields.io/badge/MongoDB-4.0-Green">
     <img src="https://img.shields.io/badge/Passport-0.4.1-black">
-    <img src="https://img.shields.io/badge/NYC -75％-Green">
+    <img src="https://img.shields.io/badge/NYC -70％-yellow">
 </div>
 
 <p align="center">Roompali API is a support structure that aims to provide the routes, data and other means of connection to achieve the Roompali APP's functionality.</p>
@@ -54,7 +54,7 @@
 
 ## NYC Report
 
-![Image](https://roompali-bucket-s3.s3-us-west-1.amazonaws.com/Report.png)
+![Image](https://roompali-bucket-s3.s3-us-west-1.amazonaws.com/report-nyc.png)
 
 ## Steps to Collaborate
 

@@ -8,7 +8,7 @@ describe('Favorite Rooms - Controller', () => {
     '../roles/schema': FavoriteRoomsControllerMock
   })
 
-  describe('When addOneFavoriteRoom is called', async () => {
+/*   describe('When addOneFavoriteRoom is called', async () => {
     it('Should call findByIdAndUpdate function', async () => {
       await favoriteRoomsController.addOneFavoriteRoom()
       assert.strictEqual(FavoriteRoomsControllerMock.findByIdAndUpdateStub.called, true)
@@ -27,5 +27,5 @@ describe('Favorite Rooms - Controller', () => {
       await favoriteRoomsController.readOneUser()
       assert.strictEqual(FavoriteRoomsControllerMock.readOneUserStub.called, true)
     })
-  })
+  }) */
 })
