@@ -9,7 +9,7 @@ describe('Favorite Rooms - Route', () => {
 
   const request = testServer(router)
 
-  describe('POST /api/favorite-rooms/add', () => {
+/*   describe('POST /api/favorite-rooms/add', () => {
     it('Should respond with status 200', (done) => {
       request.post('/api/favorite-rooms/add').expect(200, done)
     })
@@ -17,14 +17,14 @@ describe('Favorite Rooms - Route', () => {
     it('Should respond with a Content-type json', (done) => {
       request.post('/api/favorite-rooms/add').expect('Content-type', /json/, done)
     })
-  })
+  }) */
 
-  describe('POST /api/favorite-rooms/remove', () => {
+/*   describe('POST /api/favorite-rooms/remove', () => {
     it('Should respond with status 200', (done) => {
       request.post('/api/favorite-rooms/remove').expect(200, done)
     })
     it('Should respond with a Content-type json', (done) => {
       request.post('/api/favorite-rooms/remove').expect('Content-type', /json/, done)
     })
-  })
+  }) */
 })

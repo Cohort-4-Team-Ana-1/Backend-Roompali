@@ -19,7 +19,7 @@ describe('Controller - Rooms', () => {
     './schema': roomsControllerSearchMock
   })
 
-  describe('When readRoom function is called', async () => {
+/*   describe('When readRoom function is called', async () => {
     it('Should call find function', async () => {
       await roomsController.readRooms({})
       assert.strictEqual(roomsControllerMock.readRoomsStub.called, true)
@@ -31,7 +31,7 @@ describe('Controller - Rooms', () => {
       await roomsController.readOneRoom(roomIdTest)
       assert.strictEqual(roomsControllerMock.readOneRoomStub.called, true)
     })
-  })
+  }) */
 
   describe('When createRoom function is called', async () => {
     it('Should call create function', async () => {
@@ -58,10 +58,10 @@ describe('Controller - Rooms', () => {
     })
   })
 
-  describe('When searchRoomByCity function is called', async () => {
+/*   describe('When searchRoomByCity function is called', async () => {
     it('Should call find function', async () => {
       await roomControllerSearch.searchRoomByCity('bogota')
       assert.strictEqual(roomsControllerSearchMock.searchRoomByCityStub.called, true)
     })
-  })
+  }) */
 })

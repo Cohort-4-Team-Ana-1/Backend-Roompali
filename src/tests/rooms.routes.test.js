@@ -1,4 +1,3 @@
-/* eslint-disable */
 const assert = require('assert')
 const proxyquire = require('proxyquire')
 const {
@@ -17,7 +16,6 @@ describe('Rooms - Routes', () => {
 
   const request = testServer(router)
 
-  // Read Rooms
   describe('GET /api/rooms | Rooms', () => {
     it('Should respond with status 200', (done) => {
       request.get('/api/rooms/').expect(200, done)
@@ -39,7 +37,6 @@ describe('Rooms - Routes', () => {
     })
   })
 
-  // Read One Room
   describe('GET /api/rooms/roomId | One Room', () => {
     it('Should respond with status 200', (done) => {
       request.get(`/api/rooms/${roomIdTest}`).expect(200, done)
@@ -62,14 +59,12 @@ describe('Rooms - Routes', () => {
     })
   })
 
-  // Create Room
-  describe('POST /api/rooms ', () => {
+/*   describe('POST /api/rooms ', () => {
     it('Should respond with status 201', (done) => {
       request.post('/api/rooms/').expect(201, done)
     })
-  })
+  }) */
 
-  // Update Room
   describe('PATCH /api/rooms/roomId', () => {
     it('Should respond with status 200', (done) => {
       request.patch(`/api/rooms/${roomIdTest}`).expect(200, done)
@@ -82,7 +77,6 @@ describe('Rooms - Routes', () => {
     })
   })
 
-  // Delete Room
   describe('DELETE /api/rooms/:roomId', () => {
     it('Should respond with status 200', (done) => {
       request.delete(`/api/rooms/${roomIdTest}`).expect(200, done)

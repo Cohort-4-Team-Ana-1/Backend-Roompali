@@ -23,12 +23,14 @@ describe('Users - Controller', () => {
       assert.deepStrictEqual(users, usersMock)
     })
   })
-  describe('When readOneUser function is called ', async () => {
+
+/*   describe('When readOneUser function is called ', async () => {
     it('Should call findById function', async () => {
       await usersController.readOneUser(usersIdTest)
       assert.strictEqual(usersControllerMock.readOneUserStub.called, true)
     })
-  })
+  }) */
+  
   describe('When createUser function is called ', async () => {
     it('Should call create function', async () => {
       await usersController.createUser(usersMockAttributes)
