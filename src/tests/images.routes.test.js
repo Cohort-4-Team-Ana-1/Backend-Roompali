@@ -8,8 +8,6 @@ describe('Images - Routes', () => {
   })
 
   const request = testServer(router)
-
-  // Upload One image
   describe('Post /api/images', () => {
     it('Should respond with status 201', (done) => {
       request.post('/api/images').send({ image: 'roompali-bucket-s3.png' }).expect(201, done())

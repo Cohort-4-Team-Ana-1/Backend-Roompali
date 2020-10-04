@@ -19,12 +19,12 @@ const readUserByEmail = (userEmail) => {
  */
 const readOneUser = (userId) => {
   const user = Users.findById(userId)
-  .populate({
-    path: 'favorite_rooms',
-    populate: {
-      path: 'owner'
-    }
-  })
+    .populate({
+      path: 'favorite_rooms',
+      populate: {
+        path: 'owner'
+      }
+    })
   return user
 }
 

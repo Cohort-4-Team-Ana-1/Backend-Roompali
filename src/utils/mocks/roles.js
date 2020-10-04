@@ -75,7 +75,6 @@ const searchRolByUserId = async () => {
   return Promise.resolve(rolIdTest)
 }
 
-
 module.exports = {
   rolIdTest,
   rolMock,

@@ -33,8 +33,8 @@ passport.use(
 )
 passport.use(
   new JWTStrategy({
-  jwtFromRequest: ExtractJWT.fromAuthHeaderAsBearerToken(),
-  secretOrKey: config.authJwtSecret
+    jwtFromRequest: ExtractJWT.fromAuthHeaderAsBearerToken(),
+    secretOrKey: config.authJwtSecret
   },
   function (jwtPayload, cb) {
     return UsersSchema.findOne({
@@ -46,6 +46,6 @@ passport.use(
         return cb(err)
       })
   }
-))
+  ))
 
 module.exports = passport
