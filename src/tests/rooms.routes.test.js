@@ -58,13 +58,6 @@ describe('Rooms - Routes', () => {
       })
     })
   })
-
-/*   describe('POST /api/rooms ', () => {
-    it('Should respond with status 201', (done) => {
-      request.post('/api/rooms/').expect(201, done)
-    })
-  }) */
-
   describe('PATCH /api/rooms/roomId', () => {
     it('Should respond with status 200', (done) => {
       request.patch(`/api/rooms/${roomIdTest}`).expect(200, done)

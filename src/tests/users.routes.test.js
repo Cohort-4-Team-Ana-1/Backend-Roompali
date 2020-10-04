@@ -28,18 +28,6 @@ describe('Users - Routes', () => {
         .expect('Content-type', /json/, done)
     })
   })
-
-/*   describe('POST /api/users', () => {
-    it('Should respond with status 201', (done) => {
-      request.post('/api/users').expect(201, done)
-    })
-  })
-  describe('PATCH /api/users/userId', () => {
-    it('Should respond with status 200', (done) => {
-      request.patch(`/api/users/${usersIdTest}`).expect(200, done)
-    })
-  }) */
-  
   describe('DELETE /api/users/userId', () => {
     it('Should respond with status 200', (done) => {
       request.delete(`/api/users/${usersIdTest}`).expect(200, done)

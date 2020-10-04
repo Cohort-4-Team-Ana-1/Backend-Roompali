@@ -19,20 +19,6 @@ describe('Controller - Rooms', () => {
     './schema': roomsControllerSearchMock
   })
 
-/*   describe('When readRoom function is called', async () => {
-    it('Should call find function', async () => {
-      await roomsController.readRooms({})
-      assert.strictEqual(roomsControllerMock.readRoomsStub.called, true)
-    })
-  })
-
-  describe('When readOneRoom function is called', async () => {
-    it('Should call findById function', async () => {
-      await roomsController.readOneRoom(roomIdTest)
-      assert.strictEqual(roomsControllerMock.readOneRoomStub.called, true)
-    })
-  }) */
-
   describe('When createRoom function is called', async () => {
     it('Should call create function', async () => {
       await roomsController.createRoom(roomIdTest, roomMockAttributes)
