@@ -18,10 +18,7 @@
 
 <div align="center">
 
-> Demo API: https://backend-roompali.vercel.app
-</div>
-<div align="center">
-
+> Demo API: https://backend-roompali.vercel.app  
 > Demo Web App: https://frontend-roompali.vercel.app 
 </div>
 
