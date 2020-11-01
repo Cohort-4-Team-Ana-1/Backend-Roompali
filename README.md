@@ -16,6 +16,13 @@
 
 ---
 
+<div align="center">
+
+> Demo API: https://backend-roompali.vercel.app  
+> Demo Web App: https://frontend-roompali.vercel.app 
+</div>
+
+
 ## Table of Contents
 
 - [NYC Report](#nyc-report)
@@ -916,7 +923,7 @@ Value: 'test-image.png'
 | Documentation       | https://www.notion.so/Roompali-Documentation-e3e63a0f62b4469db1b509a355c7a483 |
 | Frontend Repository | https://github.com/Cohort-4-Team-Ana-1/Frontend-Roompali                      |
 | Roompali API        | https://backend-roompali.vercel.app                                           |
-| Roompali APP        | https://frontend-roompali.vercel.app/                                         |
+| Roompali APP        | https://frontend-roompali.vercel.app                                         |
 
 ## Team Members
 
